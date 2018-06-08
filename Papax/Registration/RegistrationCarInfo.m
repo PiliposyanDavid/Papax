@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
 @property (weak, nonatomic) IBOutlet UIImageView *cameraIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *imagePickerButton;
+@property (weak, nonatomic) IBOutlet UIButton *imDriverButton;
+@property (weak, nonatomic) IBOutlet UIButton *imPassangerButton;
 
 @end
 
@@ -37,6 +39,16 @@
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     [self.imagePickerButton setImage:chosenImage forState:UIControlStateNormal];
     [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)imDriverAction:(id)sender {
+    self.imDriverButton.selected = !self.imDriverButton.selected;
+    self.imPassangerButton.selected = !self.imPassangerButton.selected;
+}
+
+- (IBAction)im_passanger_action:(id)sender {
+    self.imDriverButton.selected = !self.imDriverButton.selected;
+    self.imPassangerButton.selected = !self.imPassangerButton.selected;
 }
 
 @end

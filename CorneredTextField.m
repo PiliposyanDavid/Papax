@@ -18,7 +18,9 @@
         [self.layer setBorderColor:[UIColor colorWithRed:168.f/255.f green:182.f/255.f blue:200.f/255.f alpha:1].CGColor];
         [self.layer setBorderWidth:1.0];
         [self.layer setCornerRadius:25.0f];
-        self.borderStyle = UITextBorderStyleNone;
+        self.layer.masksToBounds = YES;
+        self.clipsToBounds = YES;
+        self.borderStyle = UITextBorderStyleRoundedRect;
     }
     return self;
 }
