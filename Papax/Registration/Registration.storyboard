@@ -339,7 +339,7 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lri-5K-kgf" customClass="GradientButton">
                                                 <rect key="frame" x="20" y="507" width="314" height="50"/>
-                                                <color key="backgroundColor" red="0.93538602940000004" green="0.62438397229999998" blue="0.28983827909999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.90196078431372551" green="0.88235294117647056" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="BGM-HJ-2f7"/>
                                                 </constraints>
