@@ -292,6 +292,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7D4-tP-3ws"/>
                     </view>
+                    <connections>
+                        <outlet property="companyKey" destination="70l-X4-HzA" id="kaz-aQ-P3M"/>
+                        <outlet property="nameField" destination="zeZ-DQ-GFN" id="lqA-el-CoQ"/>
+                        <outlet property="phoneField" destination="av1-Mt-yut" id="9gB-uX-EOb"/>
+                        <outlet property="selectCompany" destination="Giy-FH-D6b" id="AoU-2W-E4o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y5-99-dj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -475,7 +481,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-Lx-wlL" customClass="CorneredTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7J7-Lx-wlL" customClass="CorneredTextField">
                                                 <rect key="frame" x="20" y="229" width="314" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="fLz-7Q-YP6"/>
@@ -484,7 +490,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fY-3x-UWl" customClass="CorneredTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Color" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fY-3x-UWl" customClass="CorneredTextField">
                                                 <rect key="frame" x="20" y="295" width="314" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="3GW-zv-APR"/>
@@ -524,7 +530,7 @@
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qM2-3C-l75" customClass="CorneredTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qM2-3C-l75" customClass="CorneredTextField">
                                                 <rect key="frame" x="20" y="361" width="314" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="qnx-TR-bR9"/>
@@ -533,7 +539,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CO5-wa-ad1" customClass="CorneredTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Seats count" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CO5-wa-ad1" customClass="CorneredTextField">
                                                 <rect key="frame" x="20" y="427" width="314" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="iLg-sr-P5y"/>
@@ -642,12 +648,17 @@
                     <connections>
                         <outlet property="avatarView" destination="hEi-CU-7Mp" id="LLR-oM-9MK"/>
                         <outlet property="cameraIconImageView" destination="fre-0H-vNo" id="11J-kh-wIX"/>
+                        <outlet property="colorField" destination="9fY-3x-UWl" id="Ijy-BL-BqQ"/>
                         <outlet property="driverContainer" destination="R14-0r-GLA" id="vG1-xf-YQe"/>
                         <outlet property="imDriverButton" destination="3ux-xq-bfJ" id="dUi-KG-daP"/>
                         <outlet property="imPassangerButton" destination="O6P-w7-KNk" id="dWg-gX-r0R"/>
                         <outlet property="imagePickerButton" destination="gYR-X6-D2t" id="Y3P-Hz-GSS"/>
+                        <outlet property="modelField" destination="qM2-3C-l75" id="QpT-GF-MKt"/>
+                        <outlet property="nameField" destination="inx-OX-i6A" id="EJA-2H-Cmw"/>
+                        <outlet property="numberField" destination="7J7-Lx-wlL" id="sxL-Yk-lE1"/>
                         <outlet property="passangerContainer" destination="7bR-6J-ngS" id="G02-4h-8eM"/>
                         <outlet property="scrollView" destination="UtQ-uz-sL9" id="1cc-3i-N9v"/>
+                        <outlet property="seatsCountField" destination="CO5-wa-ad1" id="CUa-68-Fig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i82-dJ-CyK" userLabel="First Responder" sceneMemberID="firstResponder"/>

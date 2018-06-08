@@ -7,6 +7,7 @@
 //
 
 #import "RegistrationCarInfo.h"
+#import "CorneredTextField.h"
 
 @interface RegistrationCarInfo () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
@@ -18,6 +19,12 @@
 @property (weak, nonatomic) IBOutlet UIView *passangerContainer;
 @property (weak, nonatomic) IBOutlet UIView *driverContainer;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet CorneredTextField *nameField;
+@property (weak, nonatomic) IBOutlet CorneredTextField *numberField;
+@property (weak, nonatomic) IBOutlet CorneredTextField *colorField;
+@property (weak, nonatomic) IBOutlet CorneredTextField *modelField;
+@property (weak, nonatomic) IBOutlet CorneredTextField *seatsCountField;
 
 
 @end

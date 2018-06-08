@@ -7,8 +7,13 @@
 //
 
 #import "RegistrationUserInfoViewController.h"
+#import "CorneredTextField.h"
 
 @interface RegistrationUserInfoViewController ()
+@property (weak, nonatomic) IBOutlet CorneredTextField *nameField;
+@property (weak, nonatomic) IBOutlet CorneredTextField *phoneField;
+@property (weak, nonatomic) IBOutlet CorneredTextField *selectCompany;
+@property (weak, nonatomic) IBOutlet CorneredTextField *companyKey;
 
 @end
 
