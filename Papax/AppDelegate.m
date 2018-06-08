@@ -42,6 +42,7 @@
 
 - (void)updateRootNavigationController {
     BOOL isLogedIn = [LoginManager sharedInstance].currentUser;
+    
     UIViewController *activeViewController = nil;
         if (isLogedIn) {
             activeViewController = [[RidesViewController alloc] init];

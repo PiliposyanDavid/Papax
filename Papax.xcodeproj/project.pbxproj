@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1511856D20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1511856C20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m */; };
 		15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37AD20C984B000469CFD /* AppDelegate.m */; };
 		15BB37B120C984B000469CFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37B020C984B000469CFD /* ViewController.m */; };
 		15BB37B420C984B000469CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BB37B220C984B000469CFD /* Main.storyboard */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1511856B20CAFE4500A4C4BD /* RegistrationUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationUserInfoViewController.h; sourceTree = "<group>"; };
+		1511856C20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationUserInfoViewController.m; sourceTree = "<group>"; };
 		15BB37A920C984B000469CFD /* Papax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BB37AC20C984B000469CFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		15BB37AD20C984B000469CFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				15BB37E220CA5AE300469CFD /* Registration.storyboard */,
 				15BB37FE20CAC26400469CFD /* RegistrationCarInfo.h */,
 				15BB37FF20CAC26400469CFD /* RegistrationCarInfo.m */,
+				1511856B20CAFE4500A4C4BD /* RegistrationUserInfoViewController.h */,
+				1511856C20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 				15BB380020CAC26400469CFD /* RegistrationCarInfo.m in Sources */,
 				15BB37F720CA8D2100469CFD /* GradientButton.m in Sources */,
 				15BB37F420CA7DDE00469CFD /* CorneredTextField.m in Sources */,
+				1511856D20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m in Sources */,
 				15BB37EE20CA68F800469CFD /* UtilMethods.m in Sources */,
 				15BB37E120CA5AC800469CFD /* RegistrationViewController.m in Sources */,
 				984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */,

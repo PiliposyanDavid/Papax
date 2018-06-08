@@ -15,6 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *imDriverButton;
 @property (weak, nonatomic) IBOutlet UIButton *imPassangerButton;
 
+@property (weak, nonatomic) IBOutlet UIView *passangerContainer;
+@property (weak, nonatomic) IBOutlet UIView *driverContainer;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+
 @end
 
 @implementation RegistrationCarInfo
@@ -44,11 +49,17 @@
 - (IBAction)imDriverAction:(id)sender {
     self.imDriverButton.selected = !self.imDriverButton.selected;
     self.imPassangerButton.selected = !self.imPassangerButton.selected;
+    self.passangerContainer.hidden = YES;
+    self.driverContainer.hidden = NO;
+    self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 867);
 }
 
 - (IBAction)im_passanger_action:(id)sender {
     self.imDriverButton.selected = !self.imDriverButton.selected;
     self.imPassangerButton.selected = !self.imPassangerButton.selected;
+    self.passangerContainer.hidden = NO;
+    self.driverContainer.hidden = YES;
+    self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 700);
 }
 
 @end
