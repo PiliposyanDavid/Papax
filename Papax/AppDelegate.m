@@ -39,7 +39,7 @@
 }
 
 - (void)updateRootNavigationController {
-    BOOL isLogedIn = NO;
+    BOOL isLogedIn = YES;
     UIViewController *activeViewController = nil;
         if (isLogedIn) {
             activeViewController = [[RidesViewController alloc] init];

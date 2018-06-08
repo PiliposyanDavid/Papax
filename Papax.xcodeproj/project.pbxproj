@@ -25,6 +25,7 @@
 		15BB380020CAC26400469CFD /* RegistrationCarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37FF20CAC26400469CFD /* RegistrationCarInfo.m */; };
 		7C4CC3753CEB50F637CE40CF /* libPods-Papax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BDDA472803CC893CB1120E /* libPods-Papax.a */; };
 		984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A998E20CA5F07001859B1 /* NetworkingManager.m */; };
+		984A999320CAA078001859B1 /* DirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999220CAA078001859B1 /* DirectionService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		7FC88AE4FD34F93FE90B40CF /* libPods-PapaxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PapaxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		984A998D20CA5F07001859B1 /* NetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
 		984A998E20CA5F07001859B1 /* NetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
+		984A999120CAA078001859B1 /* DirectionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectionService.h; sourceTree = "<group>"; };
+		984A999220CAA078001859B1 /* DirectionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DirectionService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 				15BB37AD20C984B000469CFD /* AppDelegate.m */,
 				15BB37AF20C984B000469CFD /* ViewController.h */,
 				15BB37B020C984B000469CFD /* ViewController.m */,
+				984A999120CAA078001859B1 /* DirectionService.h */,
+				984A999220CAA078001859B1 /* DirectionService.m */,
 				15BB37B220C984B000469CFD /* Main.storyboard */,
 				15BB37B520C984B200469CFD /* Assets.xcassets */,
 				15BB37B720C984B200469CFD /* LaunchScreen.storyboard */,
@@ -420,6 +425,7 @@
 				15BB37BC20C984B200469CFD /* main.m in Sources */,
 				15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */,
 				15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */,
+				984A999320CAA078001859B1 /* DirectionService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
