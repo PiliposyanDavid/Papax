@@ -16,7 +16,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.34341517857142856" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="FpE-hN-nhm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FpE-hN-nhm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="OF2-Zx-OtU"/>
+                            <constraint firstItem="FpE-hN-nhm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Pif-o4-3WX"/>
+                            <constraint firstItem="FpE-hN-nhm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eHN-CH-eil"/>
+                            <constraint firstItem="FpE-hN-nhm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wqt-B6-AlZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -25,4 +36,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splash" width="180" height="320"/>
+    </resources>
 </document>
