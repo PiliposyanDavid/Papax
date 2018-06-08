@@ -10,6 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "NetworkingManager.h"
 #import "DirectionService.h"
+#import "GradientButton.h"
 
 
 #define GOOGLE_API_KEY @"AIzaSyB6MZ5v0Kj6KdncBGeROfidNs-bWYub4_E"
@@ -53,38 +54,60 @@
     
     
     
-    [self createMapContainerView];
+    self.mapContainerView = [self createMapContainerView];
+    [self.view addSubview:self.mapContainerView];
 
+    GradientButton *gradientButton = [self createGradientButton];
+    [self.view addSubview:gradientButton];
+
+    
     self.waypoints = [NSMutableArray new];
     
-    self.markerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 40)];
+    self.markerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
     self.markerImageView.image = [UIImage imageNamed:@"marker"];
     self.markerImageView.center = self.view.center;
     [self.view addSubview:self.markerImageView];
+    
 }
 
-- (void)createMapContainerView {
-    self.mapContainerView = [[GMSMapView alloc] initWithFrame:self.view.bounds];
-    self.mapContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    self.mapContainerView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:self.mapContainerView];
+- (GMSMapView *)createMapContainerView {
+    GMSMapView *mapContainerView = [[GMSMapView alloc] initWithFrame:self.view.bounds];
+    mapContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    mapContainerView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    self.mapContainerView.mapType = kGMSTypeNormal;
-    self.mapContainerView.myLocationEnabled = YES;
-    self.mapContainerView.settings.myLocationButton = YES;
-    [self.view addSubview:self.mapContainerView];
-    [self.mapContainerView setMinZoom:10 maxZoom:18];
+    mapContainerView.mapType = kGMSTypeNormal;
+    mapContainerView.myLocationEnabled = YES;
+    mapContainerView.settings.myLocationButton = YES;
+//    [mapContainerView setMinZoom:10 maxZoom:18];
     
-    self.mapContainerView.delegate = self;
+    mapContainerView.delegate = self;
     
     // Listen to the myLocation property of GMSMapView.
-    [self.mapContainerView addObserver:self
+    [mapContainerView addObserver:self
                forKeyPath:@"myLocation"
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
     
     // Ask for My Location data after the map has already been added to the UI.
-    self.mapContainerView.myLocationEnabled = YES;
+    mapContainerView.myLocationEnabled = YES;
+    
+    return mapContainerView;
+}
+
+- (GradientButton *)createGradientButton {
+    GradientButton *gradientButton = [[GradientButton alloc] initWithFrame:CGRectMake(0, 0, 284, 50)];
+    gradientButton.center = self.view.center;
+    CGRect frame = gradientButton.frame;
+    frame.origin.y = [UIScreen mainScreen].bounds.size.height - frame.size.height - 25;
+    gradientButton.frame = frame;
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont systemFontOfSize:16],
+                                 NSForegroundColorAttributeName : [UIColor whiteColor]};
+    [gradientButton setAttributedTitle:[[NSMutableAttributedString alloc] initWithString:@"Add Address"attributes:attributes] forState:UIControlStateNormal];
+    gradientButton.darkBlueVariant = YES;
+    [gradientButton addTarget:self action:@selector(gradientButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    return gradientButton;
 }
 
 - (void)dealloc {
@@ -157,25 +180,25 @@
 
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     
-    CLLocationCoordinate2D position = [mapView.projection coordinateForPoint:CGPointMake(self.view.center.x, self.view.center.y + 20) ];
-    
-    GMSMarker *marker = [self markerObjectInPosition:position];
-    [self.waypoints addObject:marker];
-    [self drawMarkers];
-    
-    
-    if ([self waypointsString].count > 1) {
-        NSString *sensor = @"false";
-        NSArray *parameters = [NSArray arrayWithObjects:sensor, [self waypointsString], nil];
-        NSArray *keys = [NSArray arrayWithObjects:@"sensor", @"waypoints", nil];
-        NSDictionary *query = [NSDictionary dictionaryWithObjects:parameters forKeys:keys];
-        
-        DirectionService *ds = [DirectionService new];
-        [ds setDirectionsQuery:query
-                  withSelector:@selector(addDirections:)
-                  withDelegate:self];
-
-    }
+//    CLLocationCoordinate2D position = [mapView.projection coordinateForPoint:CGPointMake(self.view.center.x, self.view.center.y + 20) ];
+//
+//    GMSMarker *marker = [self markerObjectInPosition:position];
+//    [self.waypoints addObject:marker];
+//    [self drawMarkers];
+//
+//
+//    if ([self waypointsString].count > 1) {
+//        NSString *sensor = @"false";
+//        NSArray *parameters = [NSArray arrayWithObjects:sensor, [self waypointsString], nil];
+//        NSArray *keys = [NSArray arrayWithObjects:@"sensor", @"waypoints", nil];
+//        NSDictionary *query = [NSDictionary dictionaryWithObjects:parameters forKeys:keys];
+//
+//        DirectionService *ds = [DirectionService new];
+//        [ds setDirectionsQuery:query
+//                  withSelector:@selector(addDirections:)
+//                  withDelegate:self];
+//
+//    }
 }
 
 - (NSArray *)waypointsString {
@@ -190,8 +213,6 @@
 - (void)addDirections:(NSDictionary *)json {
     NSArray *arr = json[@"routes"];
     if (arr.count) {
-        NSArray *a = json[@"routes"];
-        NSLog(@"++%@", a);
         NSDictionary *routes = json[@"routes"][0];
         NSDictionary *route = routes[@"overview_polyline"];
         NSString *overviewRoute = route[@"points"];
@@ -204,9 +225,10 @@
 
 - (void)mapView:(GMSMapView *)mapView didLongPressAtCoordinate:(CLLocationCoordinate2D)coordinate {
     for (GMSMarker *marker in self.waypoints) {
-        if ([self directMetersFromCoordinate:marker.position toCoordinate:coordinate] < 200) {
+        if ([self directMetersFromCoordinate:marker.position toCoordinate:coordinate] < 300) {
             marker.map = nil;
             [self.waypoints removeObject:marker];
+            break;
         }
     }
     [self drawMarkers];
@@ -224,6 +246,30 @@
     lontitudeH *= lontitudeH;
     double tmp = cos(from.latitude*DEG_TO_RAD) * cos(to.latitude*DEG_TO_RAD);
     return EARTH_RADIUS_IN_METERS * 2.0 * asin(sqrt(latitudeH + tmp*lontitudeH));
+}
+
+#pragma mark - Actions
+
+- (void)gradientButtonPressed:(UIButton *)sender {
+    CLLocationCoordinate2D position = [self.mapContainerView.projection coordinateForPoint:CGPointMake(self.view.center.x, self.view.center.y + 20) ];
+    
+    GMSMarker *marker = [self markerObjectInPosition:position];
+    [self.waypoints addObject:marker];
+    [self drawMarkers];
+    
+    
+    if ([self waypointsString].count > 1) {
+        NSString *sensor = @"false";
+        NSArray *parameters = [NSArray arrayWithObjects:sensor, [self waypointsString], nil];
+        NSArray *keys = [NSArray arrayWithObjects:@"sensor", @"waypoints", nil];
+        NSDictionary *query = [NSDictionary dictionaryWithObjects:parameters forKeys:keys];
+        
+        DirectionService *ds = [DirectionService new];
+        [ds setDirectionsQuery:query
+                  withSelector:@selector(addDirections:)
+                  withDelegate:self];
+        
+    }
 }
 
 @end

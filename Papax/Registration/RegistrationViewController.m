@@ -7,8 +7,13 @@
 //
 
 #import "RegistrationViewController.h"
+#import "CorneredTextField.h"
+#import "LoginManager.h"
 
 @interface RegistrationViewController ()
+
+@property (weak, nonatomic) IBOutlet CorneredTextField *emailTextField;
+@property (weak, nonatomic) IBOutlet CorneredTextField *passwordTextField;
 
 @end
 
@@ -19,5 +24,16 @@
     self.navigationController.navigationBar.hidden = YES;
     // Do any additional setup after loading the view.
 }
+
+#pragma mark - Actions
+
+- (IBAction)loginButtonPressed:(UIButton *)sender {
+    [[LoginManager sharedInstance] loginWithPhoneNumber:self.emailTextField.text password:self.passwordTextField.text onSuccess:^(id result) {
+        
+    } onFailure:^(NSError *error) {
+        
+    }];
+}
+
 
 @end

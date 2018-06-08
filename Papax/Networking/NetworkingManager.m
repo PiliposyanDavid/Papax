@@ -21,8 +21,7 @@
 
 @implementation NetworkingManager
 
-+ (instancetype)sharedInstance
-{
++ (instancetype)sharedInstance {
     static NetworkingManager *sharedMyManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -70,5 +69,32 @@
     }] resume];
 }
 
+- (void)loginWithPhoneNumber:(NSString *)phoneNumber password:(NSString *)password onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure {
+    [self requestToPath:@"login"
+                 method:@"POST"
+                 params:@{@"phone" : phoneNumber,
+                          @"password" : password}
+      completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+          if(!error) {
+//              NSDictionary * userData = [responseObject[@"data"] dictionaryByReplacingNullsWithStrings];
+//              User *user = nil;
+//              if([userId isEqualToString:[PSUser sharedInstance].userId]) {
+//                  [[NSUserDefaults standardUserDefaults] setObject:userData forKey:@"user"];
+//                  [[NSUserDefaults standardUserDefaults] synchronize];
+//                  [PSUser loadUser];
+//                  user = [PSUser sharedInstance];
+//              } else {
+//                  user = [MTLJSONAdapter modelOfClass:PSUser.class fromJSONDictionary:userData error:NULL];
+//              }
+              if(success) {
+                  success(responseObject);
+              }
+          } else {
+              if(failure) {
+                  failure(error);
+              }
+          }
+      }];
+}
 
 @end

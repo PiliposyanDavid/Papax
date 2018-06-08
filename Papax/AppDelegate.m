@@ -10,6 +10,8 @@
 #import "RidesViewController.h"
 #import "UtilMethods.h"
 #import <GooglePlaces/GooglePlaces.h>
+#import "LoginManager.h"
+#import "User.h"
 
 #define GOOGLE_API_KEY @"AIzaSyB6MZ5v0Kj6KdncBGeROfidNs-bWYub4_E"
 
@@ -39,7 +41,7 @@
 }
 
 - (void)updateRootNavigationController {
-    BOOL isLogedIn = YES;
+    BOOL isLogedIn = [LoginManager sharedInstance].currentUser;
     UIViewController *activeViewController = nil;
         if (isLogedIn) {
             activeViewController = [[RidesViewController alloc] init];
