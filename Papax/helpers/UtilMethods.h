@@ -19,7 +19,7 @@
 //
 //+ (BOOL)isValidHashtag:(NSString *)hashtag;
 //
-//+ (UIColor *)colorFromHexString:(NSString *)hexString;
++ (UIColor *)colorFromHexString:(NSString *)hexString;
 //
 //+ (void)showProgressHudWithText:(NSString *)text OnView:(UIView *)view;
 //

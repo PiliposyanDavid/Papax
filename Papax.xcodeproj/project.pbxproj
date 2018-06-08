@@ -19,6 +19,9 @@
 		15BB37E320CA5AE300469CFD /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BB37E220CA5AE300469CFD /* Registration.storyboard */; };
 		15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37E620CA5F6000469CFD /* RidesViewController.m */; };
 		15BB37EE20CA68F800469CFD /* UtilMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37EC20CA68F700469CFD /* UtilMethods.m */; };
+		15BB37F420CA7DDE00469CFD /* CorneredTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37F320CA7DDE00469CFD /* CorneredTextField.m */; };
+		15BB37F720CA8D2100469CFD /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37F620CA8D2100469CFD /* GradientButton.m */; };
+		15BB37FA20CA947E00469CFD /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37F920CA947E00469CFD /* GradientView.m */; };
 		7C4CC3753CEB50F637CE40CF /* libPods-Papax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BDDA472803CC893CB1120E /* libPods-Papax.a */; };
 		984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A998E20CA5F07001859B1 /* NetworkingManager.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,12 @@
 		15BB37E620CA5F6000469CFD /* RidesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RidesViewController.m; sourceTree = "<group>"; };
 		15BB37EC20CA68F700469CFD /* UtilMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UtilMethods.m; path = Papax/helpers/UtilMethods.m; sourceTree = SOURCE_ROOT; };
 		15BB37ED20CA68F800469CFD /* UtilMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UtilMethods.h; path = Papax/helpers/UtilMethods.h; sourceTree = SOURCE_ROOT; };
+		15BB37F220CA7DDE00469CFD /* CorneredTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CorneredTextField.h; sourceTree = SOURCE_ROOT; };
+		15BB37F320CA7DDE00469CFD /* CorneredTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CorneredTextField.m; sourceTree = SOURCE_ROOT; };
+		15BB37F520CA8D2100469CFD /* GradientButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = SOURCE_ROOT; };
+		15BB37F620CA8D2100469CFD /* GradientButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = SOURCE_ROOT; };
+		15BB37F820CA947E00469CFD /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = SOURCE_ROOT; };
+		15BB37F920CA947E00469CFD /* GradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = SOURCE_ROOT; };
 		1B8F0FE3676571425F53C455 /* Pods-Papax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papax.release.xcconfig"; path = "Pods/Target Support Files/Pods-Papax/Pods-Papax.release.xcconfig"; sourceTree = "<group>"; };
 		20BDDA472803CC893CB1120E /* libPods-Papax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Papax.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D94A22F70EEE749505DEEA /* libPods-PapaxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PapaxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +211,12 @@
 			children = (
 				15BB37ED20CA68F800469CFD /* UtilMethods.h */,
 				15BB37EC20CA68F700469CFD /* UtilMethods.m */,
+				15BB37F220CA7DDE00469CFD /* CorneredTextField.h */,
+				15BB37F320CA7DDE00469CFD /* CorneredTextField.m */,
+				15BB37F520CA8D2100469CFD /* GradientButton.h */,
+				15BB37F620CA8D2100469CFD /* GradientButton.m */,
+				15BB37F820CA947E00469CFD /* GradientView.h */,
+				15BB37F920CA947E00469CFD /* GradientView.m */,
 			);
 			path = helpers;
 			sourceTree = "<unknown>";
@@ -389,7 +404,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BB37FA20CA947E00469CFD /* GradientView.m in Sources */,
 				15BB37B120C984B000469CFD /* ViewController.m in Sources */,
+				15BB37F720CA8D2100469CFD /* GradientButton.m in Sources */,
+				15BB37F420CA7DDE00469CFD /* CorneredTextField.m in Sources */,
 				15BB37EE20CA68F800469CFD /* UtilMethods.m in Sources */,
 				15BB37E120CA5AC800469CFD /* RegistrationViewController.m in Sources */,
 				984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */,
