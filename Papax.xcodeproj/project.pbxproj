@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1511856D20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1511856C20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m */; };
 		1511857020CB0B1800A4C4BD /* RegInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1511856F20CB0B1800A4C4BD /* RegInfoObject.m */; };
+		1511857320CB3EB800A4C4BD /* PassangerRidesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1511857220CB3EB800A4C4BD /* PassangerRidesViewController.m */; };
 		15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37AD20C984B000469CFD /* AppDelegate.m */; };
 		15BB37B120C984B000469CFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37B020C984B000469CFD /* ViewController.m */; };
 		15BB37B420C984B000469CFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BB37B220C984B000469CFD /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 		1511856C20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationUserInfoViewController.m; sourceTree = "<group>"; };
 		1511856E20CB0B1800A4C4BD /* RegInfoObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegInfoObject.h; sourceTree = "<group>"; };
 		1511856F20CB0B1800A4C4BD /* RegInfoObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegInfoObject.m; sourceTree = "<group>"; };
+		1511857120CB3EB800A4C4BD /* PassangerRidesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassangerRidesViewController.h; sourceTree = "<group>"; };
+		1511857220CB3EB800A4C4BD /* PassangerRidesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassangerRidesViewController.m; sourceTree = "<group>"; };
 		15BB37A920C984B000469CFD /* Papax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BB37AC20C984B000469CFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		15BB37AD20C984B000469CFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				15BB37B020C984B000469CFD /* ViewController.m */,
 				984A999120CAA078001859B1 /* DirectionService.h */,
 				984A999220CAA078001859B1 /* DirectionService.m */,
+				1511857120CB3EB800A4C4BD /* PassangerRidesViewController.h */,
+				1511857220CB3EB800A4C4BD /* PassangerRidesViewController.m */,
 				984A999420CAF4BF001859B1 /* User.h */,
 				984A999520CAF4BF001859B1 /* User.m */,
 				984A999A20CAFFA9001859B1 /* Car.h */,
@@ -444,6 +449,7 @@
 				15BB37FA20CA947E00469CFD /* GradientView.m in Sources */,
 				15BB37B120C984B000469CFD /* ViewController.m in Sources */,
 				15BB380020CAC26400469CFD /* RegistrationCarInfo.m in Sources */,
+				1511857320CB3EB800A4C4BD /* PassangerRidesViewController.m in Sources */,
 				15BB37F720CA8D2100469CFD /* GradientButton.m in Sources */,
 				15BB37F420CA7DDE00469CFD /* CorneredTextField.m in Sources */,
 				1511856D20CAFE4500A4C4BD /* RegistrationUserInfoViewController.m in Sources */,

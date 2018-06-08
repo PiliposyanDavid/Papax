@@ -22,5 +22,7 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D homeLocation;
 @property (nonatomic, readonly) BOOL isActive;
 @property (nonatomic, readonly) Car *car;
+@property (nonatomic) NSString *type;
+@property (nonatomic) BOOL isDriver;
 
 @end

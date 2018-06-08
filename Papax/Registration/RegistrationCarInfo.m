@@ -13,6 +13,9 @@
 #import "NetworkingManager.h"
 #import "UtilMethods.h"
 #import "RidesViewController.h"
+#import "User.h"
+#import "LoginManager.h"
+#import "PassangerRidesViewController.h"
 
 @interface RegistrationCarInfo () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
@@ -37,6 +40,8 @@
 
 @property (weak, nonatomic) IBOutlet GradientButton *startCarpoolButton;
 
+@property (nonatomic) UITextField *activeTextField;
+
 @end
 
 @implementation RegistrationCarInfo
@@ -54,6 +59,15 @@
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapReceived:)];
     [self.view addGestureRecognizer:tapGestureRecognizer];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardWasShown:)
+                                                     name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardWillBeHidden:)
+                                                     name:UIKeyboardWillHideNotification object:nil];
+    
 }
 
 - (IBAction)imagePicker:(id)sender {
@@ -68,7 +82,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     NSData *imageData = UIImageJPEGRepresentation(chosenImage, 0.5);
-    NSString* imageStr = [[NSString alloc] initWithData:imageData encoding:NSASCIIStringEncoding];
+    NSString *imageStr = [NSString stringWithFormat:@"%@",[imageData base64EncodedStringWithOptions:0]];
     if (imageStr) {
         [RegInfoObject sharedInstance].regInfo[@"photo"] = imageStr;
     }
@@ -91,6 +105,10 @@
     self.passangerContainer.hidden = NO;
     self.driverContainer.hidden = YES;
     self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 700);
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.activeTextField = textField;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -134,7 +152,10 @@
             } else {
                 RidesViewController *activeViewController = [[RidesViewController alloc] init];
                 self.navigationController.viewControllers = @[activeViewController];
-                self.navigationController.navigationBar.hidden = NO;
+                
+                User *user = [[User alloc] init];
+                user.isDriver = NO;
+                [[LoginManager sharedInstance] saveUser:user];
             }
         } onFailure:^(NSError *error) {
             
@@ -147,12 +168,47 @@
                 
             }];
         } else {
-            RidesViewController *activeViewController = [[RidesViewController alloc] init];
+            PassangerRidesViewController *activeViewController = [[PassangerRidesViewController alloc] init];
             self.navigationController.viewControllers = @[activeViewController];
+            
+            User *user = [[User alloc] init];
+            user.isDriver = NO;
+            [[LoginManager sharedInstance] saveUser:user];
         }
     } onFailure:^(NSError *error) {
         
     }];
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, self.activeTextField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.activeTextField.frame.origin.y-kbSize.height);
+        [self.scrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

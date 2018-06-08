@@ -10,6 +10,7 @@
 #import "CorneredTextField.h"
 #import "LoginManager.h"
 #import "RidesViewController.h"
+#import "UtilMethods.h"
 
 @interface RegistrationViewController ()
 
@@ -30,8 +31,14 @@
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
     [[LoginManager sharedInstance] loginWithPhoneNumber:self.emailTextField.text password:self.passwordTextField.text onSuccess:^(id result) {
-        UIViewController *vc = [RidesViewController new];
-        [self.navigationController pushViewController:vc animated:YES];
+        if ([result[@"status"] isEqualToString:@"error"]) {
+            [UtilMethods showMessageAlert:result[@"message"] andMessage:@"" fromViewController:self action:^{
+                
+            }];
+        } else {
+            RidesViewController *activeViewController = [[RidesViewController alloc] init];
+            self.navigationController.viewControllers = @[activeViewController];
+        }
     } onFailure:^(NSError *error) {
         
     }];

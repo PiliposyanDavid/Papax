@@ -47,6 +47,9 @@
         if(dictionary[@"car"]) {
             self.car = [[Car alloc] initWithDictionary:dictionary[@"car"]];
         }
+        if (dictionary[@"type"]) {
+            self.type = [dictionary[@"type"] description];
+        }
     }
     return self;
 }
@@ -63,6 +66,8 @@
     [encoder encodeObject:@(self.homeLocation.longitude) forKey:@"homeLocation.longitude"];
     [encoder encodeObject:@(self.isActive) forKey:@"isActive"];
     [encoder encodeObject:self.car forKey:@"car"];
+    [encoder encodeObject:self.car forKey:@"type"];
+    
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -77,8 +82,13 @@
         self.homeLocation = CLLocationCoordinate2DMake(latitude, longitude);
         self.isActive = [[decoder decodeObjectForKey:@"isActive"] boolValue];
         self.car = [decoder decodeObjectForKey:@"car"];
+        self.type = [decoder decodeObjectForKey:@"type"];
     }
     return self;
+}
+
+- (BOOL)isDriver {
+    return [self.type isEqualToString:@"driver"];
 }
 
 @end

@@ -19,4 +19,6 @@
 
 @property (nonatomic, readonly) User *currentUser;
 
+- (void)saveUser:(User *)user;
+
 @end
