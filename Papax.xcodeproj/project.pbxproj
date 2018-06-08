@@ -16,6 +16,7 @@
 		15BB37C620C984B200469CFD /* PapaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37C520C984B200469CFD /* PapaxTests.m */; };
 		15BB37D120C984B200469CFD /* PapaxUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37D020C984B200469CFD /* PapaxUITests.m */; };
 		7C4CC3753CEB50F637CE40CF /* libPods-Papax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BDDA472803CC893CB1120E /* libPods-Papax.a */; };
+		984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A998E20CA5F07001859B1 /* NetworkingManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		53D94A22F70EEE749505DEEA /* libPods-PapaxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PapaxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		645B6552CA53D96DE7C26B4E /* Pods-Papax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Papax/Pods-Papax.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC88AE4FD34F93FE90B40CF /* libPods-PapaxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PapaxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		984A998D20CA5F07001859B1 /* NetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
+		984A998E20CA5F07001859B1 /* NetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,7 @@
 				15BB37B720C984B200469CFD /* LaunchScreen.storyboard */,
 				15BB37BA20C984B200469CFD /* Info.plist */,
 				15BB37BB20C984B200469CFD /* main.m */,
+				984A999020CA5F0F001859B1 /* Networking */,
 			);
 			path = Papax;
 			sourceTree = "<group>";
@@ -158,6 +162,15 @@
 				15BB37D220C984B200469CFD /* Info.plist */,
 			);
 			path = PapaxUITests;
+			sourceTree = "<group>";
+		};
+		984A999020CA5F0F001859B1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				984A998E20CA5F07001859B1 /* NetworkingManager.m */,
+				984A998D20CA5F07001859B1 /* NetworkingManager.h */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15BB37B120C984B000469CFD /* ViewController.m in Sources */,
+				984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */,
 				15BB37BC20C984B200469CFD /* main.m in Sources */,
 				15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */,
 			);
