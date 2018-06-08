@@ -25,6 +25,7 @@
 @property (nonatomic) BOOL firstLocationUpdate;
 @property (nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) UIImageView *markerImageView;
+@property (nonatomic) UILabel *name;
 
 @end
 
@@ -68,6 +69,13 @@
     self.markerImageView.center = self.view.center;
     [self.view addSubview:self.markerImageView];
     
+    
+    UIView *whiteView = [[UIView alloc] initWithFrame:CGRectMake(10, 74, CGRectGetWidth(self.view.bounds) - 20, 80)];
+    whiteView.backgroundColor = [UIColor whiteColor];
+    [self.mapContainerView addSubview:whiteView];
+    
+    self.name = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, CGRectGetWidth(self.view.bounds) - 20, 20)];
+    [whiteView addSubview:self.name];
 }
 
 - (GMSMapView *)createMapContainerView {
@@ -201,6 +209,64 @@
 //    }
 }
 
+- (void)mapView:(GMSMapView *)mapView didChangeCameraPosition:(GMSCameraPosition *)position {
+    double latitude = mapView.camera.target.latitude;
+    double longitude = mapView.camera.target.longitude;
+    
+    NSLog(@"LAT:%f LONG:%f", latitude, longitude);
+    
+    //    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(latitude, longitude);
+}
+
+- (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)position
+{
+    double latitude = mapView.camera.target.latitude;
+    double longitude = mapView.camera.target.longitude;
+    
+    [self CallLocationGetAddress:latitude Long:longitude];
+    NSLog(@"Complited LAT:%f LONG:%f",latitude,longitude);
+}
+
+#pragma mark - API Call
+- (void)CallLocationGetAddress:(double)Lat Long:(double)Long {
+    CLGeocoder *ceo = [[CLGeocoder alloc] init];
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:Lat longitude:Long];
+    
+    [ceo reverseGeocodeLocation: loc completionHandler:^(NSArray *placemarks, NSError *error)
+     {
+         CLPlacemark *placemarkLocation = [placemarks objectAtIndex:0];
+         NSLog(@"==============================================");
+         NSLog(@"placemark :-%@",placemarkLocation);
+         
+         //String to hold address
+         NSString *locatedAt = [[placemarkLocation.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+         NSLog(@"addressDictionary:\n%@",placemarkLocation.addressDictionary);
+         
+         NSLog(@"==============================================");
+         NSLog(@"region                         :-%@",placemarkLocation.region);
+         NSLog(@"country                        :-%@",placemarkLocation.country);  // Give Country Name
+         NSLog(@"locality                       :-%@",placemarkLocation.locality); // Extract the city name
+         NSLog(@"name                           :-%@",placemarkLocation.name);
+         NSLog(@"ocean                          :-%@",placemarkLocation.ocean);
+         NSLog(@"postalCode                     :-%@",placemarkLocation.postalCode);
+         NSLog(@"subLocality                    :-%@",placemarkLocation.subLocality);
+         NSLog(@"ISOcountryCode                 :-%@",placemarkLocation.ISOcountryCode);
+         NSLog(@"administrativeArea             :-%@",placemarkLocation.administrativeArea);
+         NSLog(@"subAdministrativeArea          :-%@",placemarkLocation.subAdministrativeArea);
+         NSLog(@"subLocality                    :-%@",placemarkLocation.subLocality);
+         NSLog(@"thoroughfare                   :-%@",placemarkLocation.thoroughfare);
+         NSLog(@"subThoroughfare                :-%@",placemarkLocation.subThoroughfare);
+         NSLog(@"timeZone                       :-%@",placemarkLocation.timeZone);
+         NSLog(@"location                       :-%@",placemarkLocation.location);
+         NSLog(@"==============================================");
+         //Print the location to console
+         NSLog(@"I am currently at :-%@",locatedAt);
+         NSLog(@"==============================================");
+         
+         self.name.text = placemarkLocation.name;
+     }];
+}
+
 - (NSArray *)waypointsString {
     NSMutableArray *waypointsString = [NSMutableArray new];
     for (GMSMarker *marker in self.waypoints) {
@@ -228,6 +294,9 @@
         if ([self directMetersFromCoordinate:marker.position toCoordinate:coordinate] < 300) {
             marker.map = nil;
             [self.waypoints removeObject:marker];
+            
+            [self.mapContainerView clear];
+            [self drawPath];
             break;
         }
     }
@@ -251,13 +320,16 @@
 #pragma mark - Actions
 
 - (void)gradientButtonPressed:(UIButton *)sender {
-    CLLocationCoordinate2D position = [self.mapContainerView.projection coordinateForPoint:CGPointMake(self.view.center.x, self.view.center.y + 20) ];
+    CLLocationCoordinate2D position = [self.mapContainerView.projection coordinateForPoint:CGPointMake(self.view.center.x, self.view.center.y + 20)];
     
     GMSMarker *marker = [self markerObjectInPosition:position];
     [self.waypoints addObject:marker];
     [self drawMarkers];
     
-    
+    [self drawPath];
+}
+
+- (void)drawPath {
     if ([self waypointsString].count > 1) {
         NSString *sensor = @"false";
         NSArray *parameters = [NSArray arrayWithObjects:sensor, [self waypointsString], nil];
