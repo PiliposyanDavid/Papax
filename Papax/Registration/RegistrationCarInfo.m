@@ -9,7 +9,7 @@
 #import "RegistrationCarInfo.h"
 #import "CorneredTextField.h"
 
-@interface RegistrationCarInfo () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface RegistrationCarInfo () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
 @property (weak, nonatomic) IBOutlet UIImageView *cameraIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *imagePickerButton;
@@ -34,6 +34,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.avatarView bringSubviewToFront:self.cameraIconImageView];
+    self.nameField.delegate = self;
+    self.numberField.delegate = self;
+    self.colorField.delegate = self;
+    self.modelField.delegate = self;
+    self.seatsCountField.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -67,6 +72,10 @@
     self.passangerContainer.hidden = NO;
     self.driverContainer.hidden = YES;
     self.scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 700);
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
 }
 
 @end

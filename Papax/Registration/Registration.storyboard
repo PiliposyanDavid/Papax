@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="cj7-EH-hMH" customClass="bgImage">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="papaxBG" translatesAutoresizingMaskIntoConstraints="NO" id="cj7-EH-hMH" customClass="bgImage">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcS-B6-Gnw">
@@ -179,11 +179,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="cu1-Ct-QC9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="papaxBG" translatesAutoresizingMaskIntoConstraints="NO" id="cu1-Ct-QC9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGd-4y-EP2">
-                                <rect key="frame" x="10" y="154" width="355" height="405"/>
+                                <rect key="frame" x="10" y="154" width="355" height="356"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tab-iN-PRb">
                                         <rect key="frame" x="143" y="20" width="69" height="22"/>
@@ -209,28 +209,7 @@
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-Ts-dZN" customClass="GradientButton">
-                                        <rect key="frame" x="20" y="330" width="315" height="50"/>
-                                        <color key="backgroundColor" red="0.93538602940000004" green="0.62438397229999998" blue="0.28983827909999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="F6B-zc-lXQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <state key="normal" title="Register">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="25"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="darkBlueVariant" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="jVT-rL-2wV" kind="show" id="XbQ-bE-qCI"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select company" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Giy-FH-D6b" customClass="CorneredTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Giy-FH-D6b" customClass="CorneredTextField">
                                         <rect key="frame" x="20" y="198" width="315" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Bu1-aS-wTV"/>
@@ -240,35 +219,45 @@
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company pass key" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="70l-X4-HzA" customClass="CorneredTextField">
-                                        <rect key="frame" x="20" y="264" width="315" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-Ts-dZN" customClass="GradientButton">
+                                        <rect key="frame" x="20" y="272" width="315" height="50"/>
+                                        <color key="backgroundColor" red="0.90196078431372551" green="0.88235294117647056" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="BzK-CL-agR"/>
-                                            <constraint firstAttribute="height" constant="50" id="Rq9-2a-vtD"/>
+                                            <constraint firstAttribute="height" constant="50" id="2Hk-ex-HK0"/>
                                         </constraints>
-                                        <color key="textColor" red="0.6588235294" green="0.71372549019999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled" title="Sign up"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="darkBlueVariant" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpAction:" destination="J8Y-eW-wUj" eventType="touchUpInside" id="a4V-q8-3XY"/>
+                                            <segue destination="jVT-rL-2wV" kind="show" id="XbQ-bE-qCI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.60875963180000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Giy-FH-D6b" firstAttribute="leading" secondItem="DGd-4y-EP2" secondAttribute="leading" constant="20" id="0Jf-R2-HOo"/>
                                     <constraint firstAttribute="trailing" secondItem="av1-Mt-yut" secondAttribute="trailing" constant="20" id="6m5-Ej-gwV"/>
-                                    <constraint firstItem="70l-X4-HzA" firstAttribute="top" secondItem="Giy-FH-D6b" secondAttribute="bottom" constant="16" id="Gcw-lq-q6I"/>
                                     <constraint firstItem="av1-Mt-yut" firstAttribute="top" secondItem="zeZ-DQ-GFN" secondAttribute="bottom" constant="16" id="H9e-Am-gEz"/>
-                                    <constraint firstItem="bCh-Ts-dZN" firstAttribute="leading" secondItem="DGd-4y-EP2" secondAttribute="leading" constant="20" id="NEa-yi-CUu"/>
+                                    <constraint firstItem="bCh-Ts-dZN" firstAttribute="leading" secondItem="DGd-4y-EP2" secondAttribute="leading" constant="20" id="IxL-JD-IcJ"/>
                                     <constraint firstItem="zeZ-DQ-GFN" firstAttribute="leading" secondItem="DGd-4y-EP2" secondAttribute="leading" constant="20" id="Okt-kf-eyW"/>
                                     <constraint firstAttribute="trailing" secondItem="Giy-FH-D6b" secondAttribute="trailing" constant="20" id="PWC-Az-ZTh"/>
-                                    <constraint firstItem="70l-X4-HzA" firstAttribute="leading" secondItem="DGd-4y-EP2" secondAttribute="leading" constant="20" id="PpO-bh-6g9"/>
                                     <constraint firstItem="Giy-FH-D6b" firstAttribute="top" secondItem="av1-Mt-yut" secondAttribute="bottom" constant="16" id="Y6h-1j-ZwA"/>
                                     <constraint firstItem="av1-Mt-yut" firstAttribute="leading" secondItem="DGd-4y-EP2" secondAttribute="leading" constant="20" id="Yoa-fm-exV"/>
-                                    <constraint firstAttribute="trailing" secondItem="bCh-Ts-dZN" secondAttribute="trailing" constant="20" id="aGE-JO-8lh"/>
                                     <constraint firstAttribute="trailing" secondItem="zeZ-DQ-GFN" secondAttribute="trailing" constant="20" id="aYa-5D-slF"/>
-                                    <constraint firstAttribute="trailing" secondItem="70l-X4-HzA" secondAttribute="trailing" constant="20" id="c9X-Ey-5LV"/>
-                                    <constraint firstItem="bCh-Ts-dZN" firstAttribute="top" secondItem="70l-X4-HzA" secondAttribute="bottom" constant="16" id="cYd-VV-mFf"/>
+                                    <constraint firstAttribute="trailing" secondItem="bCh-Ts-dZN" secondAttribute="trailing" constant="20" id="lSf-vt-3tt"/>
                                     <constraint firstItem="tab-iN-PRb" firstAttribute="top" secondItem="DGd-4y-EP2" secondAttribute="top" constant="20" id="qTi-1W-Bnf"/>
-                                    <constraint firstAttribute="height" constant="405" id="rfm-eR-T6u"/>
+                                    <constraint firstAttribute="height" constant="356" id="rfm-eR-T6u"/>
+                                    <constraint firstItem="bCh-Ts-dZN" firstAttribute="top" secondItem="Giy-FH-D6b" secondAttribute="bottom" constant="24" id="rmo-oj-7jg"/>
                                     <constraint firstItem="zeZ-DQ-GFN" firstAttribute="top" secondItem="tab-iN-PRb" secondAttribute="bottom" constant="24" id="sgy-gV-6S5"/>
                                     <constraint firstItem="tab-iN-PRb" firstAttribute="centerX" secondItem="DGd-4y-EP2" secondAttribute="centerX" id="uvv-Pm-OYa"/>
                                 </constraints>
@@ -293,15 +282,15 @@
                         <viewLayoutGuide key="safeArea" id="7D4-tP-3ws"/>
                     </view>
                     <connections>
-                        <outlet property="companyKey" destination="70l-X4-HzA" id="kaz-aQ-P3M"/>
                         <outlet property="nameField" destination="zeZ-DQ-GFN" id="lqA-el-CoQ"/>
+                        <outlet property="password" destination="Giy-FH-D6b" id="1aP-oz-SFk"/>
                         <outlet property="phoneField" destination="av1-Mt-yut" id="9gB-uX-EOb"/>
-                        <outlet property="selectCompany" destination="Giy-FH-D6b" id="AoU-2W-E4o"/>
+                        <outlet property="signupButton" destination="bCh-Ts-dZN" id="DPY-6l-oPt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y5-99-dj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="106"/>
+            <point key="canvasLocation" x="956" y="105.69715142428787"/>
         </scene>
         <!--Registration Car Info-->
         <scene sceneID="6nC-C2-ooJ">
@@ -674,5 +663,6 @@
         <image name="im_driver_selected" width="135" height="50"/>
         <image name="im_passanger" width="125" height="34"/>
         <image name="im_passanger_selected" width="172" height="50"/>
+        <image name="papaxBG" width="360" height="640"/>
     </resources>
 </document>
