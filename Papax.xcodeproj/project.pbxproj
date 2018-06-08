@@ -15,6 +15,10 @@
 		15BB37BC20C984B200469CFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37BB20C984B200469CFD /* main.m */; };
 		15BB37C620C984B200469CFD /* PapaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37C520C984B200469CFD /* PapaxTests.m */; };
 		15BB37D120C984B200469CFD /* PapaxUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37D020C984B200469CFD /* PapaxUITests.m */; };
+		15BB37E120CA5AC800469CFD /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37E020CA5AC800469CFD /* RegistrationViewController.m */; };
+		15BB37E320CA5AE300469CFD /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BB37E220CA5AE300469CFD /* Registration.storyboard */; };
+		15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37E620CA5F6000469CFD /* RidesViewController.m */; };
+		15BB37EB20CA612E00469CFD /* UtilMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37EA20CA612E00469CFD /* UtilMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 		15BB37CC20C984B200469CFD /* PapaxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PapaxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BB37D020C984B200469CFD /* PapaxUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapaxUITests.m; sourceTree = "<group>"; };
 		15BB37D220C984B200469CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15BB37DF20CA5AC800469CFD /* RegistrationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		15BB37E020CA5AC800469CFD /* RegistrationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		15BB37E220CA5AE300469CFD /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		15BB37E520CA5F6000469CFD /* RidesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RidesViewController.h; sourceTree = "<group>"; };
+		15BB37E620CA5F6000469CFD /* RidesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RidesViewController.m; sourceTree = "<group>"; };
+		15BB37E920CA612E00469CFD /* UtilMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilMethods.h; sourceTree = "<group>"; };
+		15BB37EA20CA612E00469CFD /* UtilMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilMethods.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +112,9 @@
 		15BB37AB20C984B000469CFD /* Papax */ = {
 			isa = PBXGroup;
 			children = (
+				15BB37E820CA60FE00469CFD /* helpers */,
+				15BB37E420CA5F3400469CFD /* New Group */,
+				15BB37DE20CA592E00469CFD /* Registration */,
 				15BB37AC20C984B000469CFD /* AppDelegate.h */,
 				15BB37AD20C984B000469CFD /* AppDelegate.m */,
 				15BB37AF20C984B000469CFD /* ViewController.h */,
@@ -130,6 +144,34 @@
 				15BB37D220C984B200469CFD /* Info.plist */,
 			);
 			path = PapaxUITests;
+			sourceTree = "<group>";
+		};
+		15BB37DE20CA592E00469CFD /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				15BB37DF20CA5AC800469CFD /* RegistrationViewController.h */,
+				15BB37E020CA5AC800469CFD /* RegistrationViewController.m */,
+				15BB37E220CA5AE300469CFD /* Registration.storyboard */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		15BB37E420CA5F3400469CFD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				15BB37E520CA5F6000469CFD /* RidesViewController.h */,
+				15BB37E620CA5F6000469CFD /* RidesViewController.m */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		15BB37E820CA60FE00469CFD /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				15BB37E920CA612E00469CFD /* UtilMethods.h */,
+				15BB37EA20CA612E00469CFD /* UtilMethods.m */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15BB37B920C984B200469CFD /* LaunchScreen.storyboard in Resources */,
+				15BB37E320CA5AE300469CFD /* Registration.storyboard in Resources */,
 				15BB37B620C984B200469CFD /* Assets.xcassets in Resources */,
 				15BB37B420C984B000469CFD /* Main.storyboard in Resources */,
 			);
@@ -262,8 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BB37EB20CA612E00469CFD /* UtilMethods.m in Sources */,
 				15BB37B120C984B000469CFD /* ViewController.m in Sources */,
+				15BB37E120CA5AC800469CFD /* RegistrationViewController.m in Sources */,
 				15BB37BC20C984B200469CFD /* main.m in Sources */,
+				15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */,
 				15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

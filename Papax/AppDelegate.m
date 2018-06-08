@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "RidesViewController.h"
+#import "UtilMethods.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic) UINavigationController *rootNavigationController;
 
 @end
 
@@ -16,8 +20,40 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self updateRootNavigationController];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = self.rootNavigationController;
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
+}
+
+- (void)updateRootNavigationController {
+    BOOL isLogedIn = NO;
+    UIViewController *activeViewController = nil;
+        if (isLogedIn) {
+            activeViewController = [[RidesViewController alloc] init];
+        } else {
+            activeViewController = [UtilMethods VCFromStoryBoardWithName:@"Registration" viewControllerID:@"Registration"];
+        }
+        
+        if (!self.rootNavigationController) {
+            self.rootNavigationController = [[UINavigationController alloc]initWithRootViewController:activeViewController];
+        } else {
+            //logout case
+            NSArray *vcs = self.rootNavigationController.viewControllers;
+                NSMutableArray *newVcs = [NSMutableArray arrayWithArray:vcs];
+                [newVcs insertObject:activeViewController atIndex:0];
+                self.rootNavigationController.viewControllers = newVcs;
+        }
+    
+//        [self.rootNavigationController popToRootViewControllerAnimated:YES];
+//        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLoggedIn"]) {
+//            [self.rootNavigationController setNavigationBarHidden:YES animated:NO];
+//        } else {
+//            [self.rootNavigationController setNavigationBarHidden:NO animated:NO];
+//        }
 }
 
 
