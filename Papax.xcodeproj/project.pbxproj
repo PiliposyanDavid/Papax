@@ -22,6 +22,7 @@
 		15BB37F420CA7DDE00469CFD /* CorneredTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37F320CA7DDE00469CFD /* CorneredTextField.m */; };
 		15BB37F720CA8D2100469CFD /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37F620CA8D2100469CFD /* GradientButton.m */; };
 		15BB37FA20CA947E00469CFD /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37F920CA947E00469CFD /* GradientView.m */; };
+		15BB380020CAC26400469CFD /* RegistrationCarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37FF20CAC26400469CFD /* RegistrationCarInfo.m */; };
 		7C4CC3753CEB50F637CE40CF /* libPods-Papax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BDDA472803CC893CB1120E /* libPods-Papax.a */; };
 		984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A998E20CA5F07001859B1 /* NetworkingManager.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,8 @@
 		15BB37F620CA8D2100469CFD /* GradientButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = SOURCE_ROOT; };
 		15BB37F820CA947E00469CFD /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = SOURCE_ROOT; };
 		15BB37F920CA947E00469CFD /* GradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = SOURCE_ROOT; };
+		15BB37FE20CAC26400469CFD /* RegistrationCarInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationCarInfo.h; sourceTree = "<group>"; };
+		15BB37FF20CAC26400469CFD /* RegistrationCarInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationCarInfo.m; sourceTree = "<group>"; };
 		1B8F0FE3676571425F53C455 /* Pods-Papax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papax.release.xcconfig"; path = "Pods/Target Support Files/Pods-Papax/Pods-Papax.release.xcconfig"; sourceTree = "<group>"; };
 		20BDDA472803CC893CB1120E /* libPods-Papax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Papax.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D94A22F70EEE749505DEEA /* libPods-PapaxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PapaxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +196,8 @@
 				15BB37DF20CA5AC800469CFD /* RegistrationViewController.h */,
 				15BB37E020CA5AC800469CFD /* RegistrationViewController.m */,
 				15BB37E220CA5AE300469CFD /* Registration.storyboard */,
+				15BB37FE20CAC26400469CFD /* RegistrationCarInfo.h */,
+				15BB37FF20CAC26400469CFD /* RegistrationCarInfo.m */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 			files = (
 				15BB37FA20CA947E00469CFD /* GradientView.m in Sources */,
 				15BB37B120C984B000469CFD /* ViewController.m in Sources */,
+				15BB380020CAC26400469CFD /* RegistrationCarInfo.m in Sources */,
 				15BB37F720CA8D2100469CFD /* GradientButton.m in Sources */,
 				15BB37F420CA7DDE00469CFD /* CorneredTextField.m in Sources */,
 				15BB37EE20CA68F800469CFD /* UtilMethods.m in Sources */,
