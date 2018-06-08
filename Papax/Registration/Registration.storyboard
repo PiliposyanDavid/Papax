@@ -337,7 +337,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R14-0r-GLA">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R14-0r-GLA">
                                         <rect key="frame" x="10" y="228" width="354" height="600"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="inx-OX-i6A" customClass="CorneredTextField">
@@ -521,6 +521,7 @@
                         <outlet property="imPassangerButton" destination="O6P-w7-KNk" id="dWg-gX-r0R"/>
                         <outlet property="imagePickerButton" destination="gYR-X6-D2t" id="Y3P-Hz-GSS"/>
                         <outlet property="passangerContainer" destination="7bR-6J-ngS" id="G02-4h-8eM"/>
+                        <outlet property="scrollView" destination="UtQ-uz-sL9" id="1cc-3i-N9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i82-dJ-CyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
