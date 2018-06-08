@@ -73,4 +73,6 @@
 //
 //+ (NSInteger)localTimeZoneInSeconds;
 
++(void) showMessageAlert:(NSString *) title andMessage:(NSString*) msg fromViewController: (UIViewController*)viewController action:(void(^)(void))callback;
+
 @end

@@ -648,6 +648,7 @@
                         <outlet property="passangerContainer" destination="7bR-6J-ngS" id="G02-4h-8eM"/>
                         <outlet property="scrollView" destination="UtQ-uz-sL9" id="1cc-3i-N9v"/>
                         <outlet property="seatsCountField" destination="CO5-wa-ad1" id="CUa-68-Fig"/>
+                        <outlet property="startCarpoolButton" destination="lri-5K-kgf" id="nax-5m-rXw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i82-dJ-CyK" userLabel="First Responder" sceneMemberID="firstResponder"/>

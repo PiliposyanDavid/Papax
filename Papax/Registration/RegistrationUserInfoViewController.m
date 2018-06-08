@@ -11,6 +11,7 @@
 #import "RegInfoObject.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "GradientButton.h"
+#import "UtilMethods.h"
 
 @interface RegistrationUserInfoViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet CorneredTextField *nameField;
@@ -33,18 +34,13 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)signUpAction:(id)sender {
-    if (self.nameField.text.length && self.phoneField.text.length && self.password.text.length) {
-        
-    } else {
-        [RegistrationUserInfoViewController showMessageAlert:@"Fill the fields" andMessage:@"" fromViewController:self action:^{
-        }];
-    }
+    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField == self.nameField) { //email
         if (![textField.text containsString:@"picsart"]) {
-            [RegistrationUserInfoViewController showMessageAlert:@"Mail is incorrect" andMessage:@"" fromViewController:self action:^{
+            [UtilMethods showMessageAlert:@"Mail is incorrect" andMessage:@"" fromViewController:self action:^{
                 self.nameField.text = @"";
             }];
         } else {
@@ -56,20 +52,6 @@
         regInfo[@"password"] = textField.text;
     }
     self.signupButton.enabled = (self.nameField.text.length && self.phoneField.text.length && self.password.text.length);
-}
-
-+(void) showMessageAlert:(NSString *) title andMessage:(NSString*) msg fromViewController: (UIViewController*)viewController action:(void(^)(void))callback{
-    
-    UIAlertController *showMsgAlertController = [UIAlertController alertControllerWithTitle: title message: msg preferredStyle: UIAlertControllerStyleAlert];
-    UIAlertAction *showMsgAlertControllerOkAction = [UIAlertAction actionWithTitle:@"OK"  style:UIAlertActionStyleDefault
-                                                                           handler:^(UIAlertAction * _Nonnull action) {
-                                                                               if (callback) {
-                                                                                   callback();
-                                                                               }
-                                                                           }];
-    [showMsgAlertController addAction:showMsgAlertControllerOkAction];
-        [viewController presentViewController:showMsgAlertController animated:YES completion:nil];
-    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent* )event {

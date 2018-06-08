@@ -8,6 +8,8 @@
 
 #import "RegistrationCarInfo.h"
 #import "CorneredTextField.h"
+#import "RegInfoObject.h"
+#import "GradientButton.h"
 
 @interface RegistrationCarInfo () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
@@ -26,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet CorneredTextField *modelField;
 @property (weak, nonatomic) IBOutlet CorneredTextField *seatsCountField;
 
+@property (weak, nonatomic) IBOutlet GradientButton *startCarpoolButton;
 
 @end
 
@@ -40,6 +43,10 @@
     self.modelField.delegate = self;
     self.seatsCountField.delegate = self;
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapReceived:)];
+    [tapGestureRecognizer setDelegate:self];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
 - (IBAction)imagePicker:(id)sender {
@@ -75,7 +82,31 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.nameField.delegate = self;
+    self.numberField.delegate = self;
+    self.colorField.delegate = self;
+    self.modelField.delegate = self;
+    self.seatsCountField.delegate = self;
     
+    if (textField == self.nameField) { //email
+            regInfo[@"name"] = textField.text;
+    } else if(textField == self.numberField) {
+        regInfo[@"car"][@"number"] = textField.text;
+    } else if (textField == self.colorField) {
+        regInfo[@"car"][@"color"] = textField.text;
+    } else if (textField == self.modelField) {
+        regInfo[@"car"][@"model"] = self.modelField.text;
+    } else if (textField == self.seatsCountField) {
+        regInfo[@"car"][@"seats_count"] = self.seatsCountField.text;
+    }
+    
+    self.startCarpoolButton.enabled = (self.nameField.text.length && self.numberField.text.length &&  self.modelField.text.length && self.seatsCountField.text.length);
 }
+
+-(void)tapReceived:(UITapGestureRecognizer *)tapGestureRecognizer {
+    [self.view endEditing:YES];
+}
+
+
 
 @end

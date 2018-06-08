@@ -260,4 +260,18 @@
 //}
 //
 
++(void) showMessageAlert:(NSString *) title andMessage:(NSString*) msg fromViewController: (UIViewController*)viewController action:(void(^)(void))callback{
+    
+    UIAlertController *showMsgAlertController = [UIAlertController alertControllerWithTitle: title message: msg preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertAction *showMsgAlertControllerOkAction = [UIAlertAction actionWithTitle:@"OK"  style:UIAlertActionStyleDefault
+                                                                           handler:^(UIAlertAction * _Nonnull action) {
+                                                                               if (callback) {
+                                                                                   callback();
+                                                                               }
+                                                                           }];
+    [showMsgAlertController addAction:showMsgAlertControllerOkAction];
+    [viewController presentViewController:showMsgAlertController animated:YES completion:nil];
+    
+}
+
 @end
