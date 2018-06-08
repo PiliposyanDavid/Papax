@@ -41,8 +41,14 @@
         } else {
             [defaults removeObjectForKey:kSavedUser];
         }
-    } onFailure:^(NSError *error) {
         
+        if (success) {
+            success(self.currentUser);
+        }
+    } onFailure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
     }];
 }
 

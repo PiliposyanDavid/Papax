@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/DirectionService.m"
-            timestampString = "550178312.777552"
+            timestampString = "550180994.233156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/DirectionService.m"
-            timestampString = "550178312.777634"
+            timestampString = "550180994.233238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -42,76 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/RidesViewControllers/RidesViewController.m"
-            timestampString = "550178312.777702"
+            timestampString = "550180994.233305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
             endingLineNumber = "229"
             landmarkName = "-mapView:didLongPressAtCoordinate:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Papax/Registration/RegistrationViewController.m"
-            timestampString = "550178312.7778161"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-loginButtonPressed:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__49-[RegistrationViewController loginButtonPressed:]_block_invoke"
-                  moduleName = "Papax"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tigran/Documents/Papax/Papax/Registration/RegistrationViewController.m"
-                  timestampString = "550178312.829754"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__49-[RegistrationViewController loginButtonPressed:]_block_invoke_2"
-                  moduleName = "Papax"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tigran/Documents/Papax/Papax/Registration/RegistrationViewController.m"
-                  timestampString = "550178312.831864"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Papax/Registration/RegistrationViewController.m"
-            timestampString = "550178312.777863"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-loginButtonPressed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

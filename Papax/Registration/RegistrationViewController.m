@@ -9,6 +9,7 @@
 #import "RegistrationViewController.h"
 #import "CorneredTextField.h"
 #import "LoginManager.h"
+#import "RidesViewController.h"
 
 @interface RegistrationViewController ()
 
@@ -29,11 +30,18 @@
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
     [[LoginManager sharedInstance] loginWithPhoneNumber:self.emailTextField.text password:self.passwordTextField.text onSuccess:^(id result) {
-        
+        UIViewController *vc = [RidesViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
     } onFailure:^(NSError *error) {
         
     }];
 }
 
+
+#pragma mark - Touch handling
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
 
 @end
