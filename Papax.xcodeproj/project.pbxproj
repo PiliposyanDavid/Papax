@@ -28,6 +28,9 @@
 		7C4CC3753CEB50F637CE40CF /* libPods-Papax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BDDA472803CC893CB1120E /* libPods-Papax.a */; };
 		984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A998E20CA5F07001859B1 /* NetworkingManager.m */; };
 		984A999320CAA078001859B1 /* DirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999220CAA078001859B1 /* DirectionService.m */; };
+		984A999620CAF4BF001859B1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999520CAF4BF001859B1 /* User.m */; };
+		984A999920CAF8DF001859B1 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999820CAF8DF001859B1 /* LoginManager.m */; };
+		984A999C20CAFFA9001859B1 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999B20CAFFA9001859B1 /* Car.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,12 @@
 		984A998E20CA5F07001859B1 /* NetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
 		984A999120CAA078001859B1 /* DirectionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectionService.h; sourceTree = "<group>"; };
 		984A999220CAA078001859B1 /* DirectionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DirectionService.m; sourceTree = "<group>"; };
+		984A999420CAF4BF001859B1 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		984A999520CAF4BF001859B1 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		984A999720CAF8DF001859B1 /* LoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
+		984A999820CAF8DF001859B1 /* LoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
+		984A999A20CAFFA9001859B1 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		984A999B20CAFFA9001859B1 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +183,12 @@
 				15BB37B020C984B000469CFD /* ViewController.m */,
 				984A999120CAA078001859B1 /* DirectionService.h */,
 				984A999220CAA078001859B1 /* DirectionService.m */,
+				984A999420CAF4BF001859B1 /* User.h */,
+				984A999520CAF4BF001859B1 /* User.m */,
+				984A999A20CAFFA9001859B1 /* Car.h */,
+				984A999B20CAFFA9001859B1 /* Car.m */,
+				984A999720CAF8DF001859B1 /* LoginManager.h */,
+				984A999820CAF8DF001859B1 /* LoginManager.m */,
 				15BB37B220C984B000469CFD /* Main.storyboard */,
 				15BB37B520C984B200469CFD /* Assets.xcassets */,
 				15BB37B720C984B200469CFD /* LaunchScreen.storyboard */,
@@ -244,8 +259,8 @@
 		984A999020CA5F0F001859B1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				984A998E20CA5F07001859B1 /* NetworkingManager.m */,
 				984A998D20CA5F07001859B1 /* NetworkingManager.h */,
+				984A998E20CA5F07001859B1 /* NetworkingManager.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -424,6 +439,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984A999C20CAFFA9001859B1 /* Car.m in Sources */,
+				984A999620CAF4BF001859B1 /* User.m in Sources */,
 				15BB37FA20CA947E00469CFD /* GradientView.m in Sources */,
 				15BB37B120C984B000469CFD /* ViewController.m in Sources */,
 				15BB380020CAC26400469CFD /* RegistrationCarInfo.m in Sources */,
@@ -438,6 +455,7 @@
 				15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */,
 				15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */,
 				984A999320CAA078001859B1 /* DirectionService.m in Sources */,
+				984A999920CAF8DF001859B1 /* LoginManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

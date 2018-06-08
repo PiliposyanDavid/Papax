@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/DirectionService.m"
-            timestampString = "550165626.893921"
+            timestampString = "550180994.233156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/DirectionService.m"
-            timestampString = "550165626.89434"
+            timestampString = "550180994.233238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-retrieveDirections:withDelegate:"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-fetchedData:withSelector:withDelegate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Papax/DirectionService.m"
-            timestampString = "550165626.894635"
+            filePath = "Papax/RidesViewControllers/RidesViewController.m"
+            timestampString = "550180994.233305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-fetchedData:withSelector:withDelegate:"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "-mapView:didLongPressAtCoordinate:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

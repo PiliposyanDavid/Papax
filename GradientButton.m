@@ -43,6 +43,8 @@
         [gradientView setStartPoint:CGPointMake(CGRectGetMinX(self.bounds), CGRectGetMidY(self.bounds))
                         andEndPoint:CGPointMake(CGRectGetMaxX(self.bounds), CGRectGetMidY(self.bounds))];
         gradientView.colors = self.colors;
+        gradientView.layer.masksToBounds = YES;
+        gradientView.layer.cornerRadius = 25;
         [self addSubview:gradientView];
         
         self.titleLabel.layer.zPosition = 100;
