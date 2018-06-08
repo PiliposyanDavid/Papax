@@ -15,6 +15,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *imDriverButton;
 @property (weak, nonatomic) IBOutlet UIButton *imPassangerButton;
 
+@property (weak, nonatomic) IBOutlet UIView *passangerContainer;
+@property (weak, nonatomic) IBOutlet UIView *driverContainer;
+
+
 @end
 
 @implementation RegistrationCarInfo
@@ -44,11 +48,15 @@
 - (IBAction)imDriverAction:(id)sender {
     self.imDriverButton.selected = !self.imDriverButton.selected;
     self.imPassangerButton.selected = !self.imPassangerButton.selected;
+    self.passangerContainer.hidden = YES;
+    self.driverContainer.hidden = NO;
 }
 
 - (IBAction)im_passanger_action:(id)sender {
     self.imDriverButton.selected = !self.imDriverButton.selected;
     self.imPassangerButton.selected = !self.imPassangerButton.selected;
+    self.passangerContainer.hidden = NO;
+    self.driverContainer.hidden = YES;
 }
 
 @end

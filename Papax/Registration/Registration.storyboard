@@ -257,7 +257,20 @@
                                             <action selector="im_passanger_action:" destination="jVT-rL-2wV" eventType="touchUpInside" id="kwO-ac-Dbt"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R14-0r-GLA">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bR-6J-ngS">
+                                        <rect key="frame" x="10" y="228" width="355" height="287"/>
+                                        <color key="backgroundColor" white="1" alpha="0.60894691780821908" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="287" id="fGF-aP-Rhs"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="5.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R14-0r-GLA">
                                         <rect key="frame" x="10" y="228" width="354" height="600"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="inx-OX-i6A" customClass="CorneredTextField">
@@ -389,6 +402,12 @@
                                             <constraint firstItem="inx-OX-i6A" firstAttribute="leading" secondItem="R14-0r-GLA" secondAttribute="leading" constant="20" id="tDu-vH-TSK"/>
                                             <constraint firstItem="iyc-nf-0No" firstAttribute="centerX" secondItem="R14-0r-GLA" secondAttribute="centerX" id="txh-19-xAe"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="5.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -400,6 +419,7 @@
                                     <constraint firstItem="3ux-xq-bfJ" firstAttribute="centerX" secondItem="UtQ-uz-sL9" secondAttribute="centerX" constant="-74" id="DJv-mA-Hky"/>
                                     <constraint firstItem="uVQ-xC-TKw" firstAttribute="leading" secondItem="UtQ-uz-sL9" secondAttribute="leading" id="FS5-EN-LGk"/>
                                     <constraint firstItem="R14-0r-GLA" firstAttribute="top" secondItem="3ux-xq-bfJ" secondAttribute="bottom" constant="13" id="GC1-qm-FDw"/>
+                                    <constraint firstItem="7bR-6J-ngS" firstAttribute="top" secondItem="3ux-xq-bfJ" secondAttribute="bottom" constant="13" id="JjW-de-I7u"/>
                                     <constraint firstItem="uVQ-xC-TKw" firstAttribute="top" secondItem="UtQ-uz-sL9" secondAttribute="top" constant="-20" id="Jz6-Ps-Svw"/>
                                     <constraint firstAttribute="bottom" secondItem="R14-0r-GLA" secondAttribute="bottom" constant="39" id="MBe-hA-XIC"/>
                                     <constraint firstItem="fre-0H-vNo" firstAttribute="leading" secondItem="hEi-CU-7Mp" secondAttribute="trailing" constant="-26" id="MQH-at-PHi"/>
@@ -410,6 +430,8 @@
                                     <constraint firstAttribute="trailing" secondItem="uVQ-xC-TKw" secondAttribute="trailing" constant="2" id="ftE-rR-pi8"/>
                                     <constraint firstItem="hEi-CU-7Mp" firstAttribute="centerX" secondItem="UtQ-uz-sL9" secondAttribute="centerX" id="gAq-cz-NPz"/>
                                     <constraint firstItem="R14-0r-GLA" firstAttribute="leading" secondItem="UtQ-uz-sL9" secondAttribute="leading" constant="10" id="kg0-OA-VWI"/>
+                                    <constraint firstAttribute="trailing" secondItem="7bR-6J-ngS" secondAttribute="trailing" constant="10" id="tkh-vM-ufR"/>
+                                    <constraint firstItem="7bR-6J-ngS" firstAttribute="leading" secondItem="UtQ-uz-sL9" secondAttribute="leading" constant="10" id="xG1-2z-O8l"/>
                                     <constraint firstItem="3ux-xq-bfJ" firstAttribute="top" secondItem="hEi-CU-7Mp" secondAttribute="bottom" constant="35" id="yEa-zX-WRb"/>
                                 </constraints>
                             </scrollView>
@@ -427,14 +449,16 @@
                     <connections>
                         <outlet property="avatarView" destination="hEi-CU-7Mp" id="LLR-oM-9MK"/>
                         <outlet property="cameraIconImageView" destination="fre-0H-vNo" id="11J-kh-wIX"/>
+                        <outlet property="driverContainer" destination="R14-0r-GLA" id="vG1-xf-YQe"/>
                         <outlet property="imDriverButton" destination="3ux-xq-bfJ" id="dUi-KG-daP"/>
                         <outlet property="imPassangerButton" destination="O6P-w7-KNk" id="dWg-gX-r0R"/>
                         <outlet property="imagePickerButton" destination="gYR-X6-D2t" id="Y3P-Hz-GSS"/>
+                        <outlet property="passangerContainer" destination="7bR-6J-ngS" id="G02-4h-8eM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i82-dJ-CyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877.60000000000002" y="89.055472263868069"/>
+            <point key="canvasLocation" x="1848.8" y="89.505247376311857"/>
         </scene>
     </scenes>
     <resources>
