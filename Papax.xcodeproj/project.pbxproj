@@ -18,7 +18,9 @@
 		15BB37E120CA5AC800469CFD /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37E020CA5AC800469CFD /* RegistrationViewController.m */; };
 		15BB37E320CA5AE300469CFD /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15BB37E220CA5AE300469CFD /* Registration.storyboard */; };
 		15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37E620CA5F6000469CFD /* RidesViewController.m */; };
-		15BB37EB20CA612E00469CFD /* UtilMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37EA20CA612E00469CFD /* UtilMethods.m */; };
+		15BB37EE20CA68F800469CFD /* UtilMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BB37EC20CA68F700469CFD /* UtilMethods.m */; };
+		7C4CC3753CEB50F637CE40CF /* libPods-Papax.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BDDA472803CC893CB1120E /* libPods-Papax.a */; };
+		984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A998E20CA5F07001859B1 /* NetworkingManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +62,15 @@
 		15BB37E220CA5AE300469CFD /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		15BB37E520CA5F6000469CFD /* RidesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RidesViewController.h; sourceTree = "<group>"; };
 		15BB37E620CA5F6000469CFD /* RidesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RidesViewController.m; sourceTree = "<group>"; };
-		15BB37E920CA612E00469CFD /* UtilMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilMethods.h; sourceTree = "<group>"; };
-		15BB37EA20CA612E00469CFD /* UtilMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilMethods.m; sourceTree = "<group>"; };
+		15BB37EC20CA68F700469CFD /* UtilMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UtilMethods.m; path = Papax/helpers/UtilMethods.m; sourceTree = SOURCE_ROOT; };
+		15BB37ED20CA68F800469CFD /* UtilMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UtilMethods.h; path = Papax/helpers/UtilMethods.h; sourceTree = SOURCE_ROOT; };
+		1B8F0FE3676571425F53C455 /* Pods-Papax.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papax.release.xcconfig"; path = "Pods/Target Support Files/Pods-Papax/Pods-Papax.release.xcconfig"; sourceTree = "<group>"; };
+		20BDDA472803CC893CB1120E /* libPods-Papax.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Papax.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D94A22F70EEE749505DEEA /* libPods-PapaxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PapaxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		645B6552CA53D96DE7C26B4E /* Pods-Papax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Papax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Papax/Pods-Papax.debug.xcconfig"; sourceTree = "<group>"; };
+		7FC88AE4FD34F93FE90B40CF /* libPods-PapaxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PapaxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		984A998D20CA5F07001859B1 /* NetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
+		984A998E20CA5F07001859B1 /* NetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C4CC3753CEB50F637CE40CF /* libPods-Papax.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +99,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07A9687861BB7104682C68E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				645B6552CA53D96DE7C26B4E /* Pods-Papax.debug.xcconfig */,
+				1B8F0FE3676571425F53C455 /* Pods-Papax.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		12036065FAEFE41AC8FBCA0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20BDDA472803CC893CB1120E /* libPods-Papax.a */,
+				7FC88AE4FD34F93FE90B40CF /* libPods-PapaxTests.a */,
+				53D94A22F70EEE749505DEEA /* libPods-PapaxUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		15BB37A020C984B000469CFD = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +125,8 @@
 				15BB37C420C984B200469CFD /* PapaxTests */,
 				15BB37CF20C984B200469CFD /* PapaxUITests */,
 				15BB37AA20C984B000469CFD /* Products */,
+				07A9687861BB7104682C68E5 /* Pods */,
+				12036065FAEFE41AC8FBCA0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,8 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				15BB37E820CA60FE00469CFD /* helpers */,
-				15BB37E420CA5F3400469CFD /* New Group */,
+				15BB37E420CA5F3400469CFD /* RidesViewControllers */,
 				15BB37DE20CA592E00469CFD /* Registration */,
+				984A999020CA5F0F001859B1 /* Networking */,
 				15BB37AC20C984B000469CFD /* AppDelegate.h */,
 				15BB37AD20C984B000469CFD /* AppDelegate.m */,
 				15BB37AF20C984B000469CFD /* ViewController.h */,
@@ -156,22 +188,31 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
-		15BB37E420CA5F3400469CFD /* New Group */ = {
+		15BB37E420CA5F3400469CFD /* RidesViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				15BB37E520CA5F6000469CFD /* RidesViewController.h */,
 				15BB37E620CA5F6000469CFD /* RidesViewController.m */,
 			);
-			path = "New Group";
+			path = RidesViewControllers;
 			sourceTree = "<group>";
 		};
 		15BB37E820CA60FE00469CFD /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				15BB37E920CA612E00469CFD /* UtilMethods.h */,
-				15BB37EA20CA612E00469CFD /* UtilMethods.m */,
+				15BB37ED20CA68F800469CFD /* UtilMethods.h */,
+				15BB37EC20CA68F700469CFD /* UtilMethods.m */,
 			);
 			path = helpers;
+			sourceTree = "<unknown>";
+		};
+		984A999020CA5F0F001859B1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				984A998E20CA5F07001859B1 /* NetworkingManager.m */,
+				984A998D20CA5F07001859B1 /* NetworkingManager.h */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15BB37D520C984B200469CFD /* Build configuration list for PBXNativeTarget "Papax" */;
 			buildPhases = (
+				76623CB38B26948F506698D6 /* [CP] Check Pods Manifest.lock */,
 				15BB37A520C984B000469CFD /* Sources */,
 				15BB37A620C984B000469CFD /* Frameworks */,
 				15BB37A720C984B000469CFD /* Resources */,
+				1C36C73C94CA39C049CE3DD0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,14 +343,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C36C73C94CA39C049CE3DD0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Papax/Pods-Papax-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Papax/Pods-Papax-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76623CB38B26948F506698D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Papax-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		15BB37A520C984B000469CFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15BB37EB20CA612E00469CFD /* UtilMethods.m in Sources */,
 				15BB37B120C984B000469CFD /* ViewController.m in Sources */,
+				15BB37EE20CA68F800469CFD /* UtilMethods.m in Sources */,
 				15BB37E120CA5AC800469CFD /* RegistrationViewController.m in Sources */,
+				984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */,
 				15BB37BC20C984B200469CFD /* main.m in Sources */,
 				15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */,
 				15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */,
@@ -477,17 +562,18 @@
 		};
 		15BB37D620C984B200469CFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 645B6552CA53D96DE7C26B4E /* Pods-Papax.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TQW3HXT99;
+				DEVELOPMENT_TEAM = LLSV39R9YJ;
 				INFOPLIST_FILE = Papax/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Picsart.Papax;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Picsart.Papax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -495,17 +581,18 @@
 		};
 		15BB37D720C984B200469CFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8F0FE3676571425F53C455 /* Pods-Papax.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4TQW3HXT99;
+				DEVELOPMENT_TEAM = LLSV39R9YJ;
 				INFOPLIST_FILE = Papax/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Picsart.Papax;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Picsart.Papax;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

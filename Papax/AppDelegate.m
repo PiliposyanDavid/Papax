@@ -9,6 +9,11 @@
 #import "AppDelegate.h"
 #import "RidesViewController.h"
 #import "UtilMethods.h"
+#import <GooglePlaces/GooglePlaces.h>
+
+#define GOOGLE_API_KEY @"AIzaSyB6MZ5v0Kj6KdncBGeROfidNs-bWYub4_E"
+
+@import GoogleMaps;
 
 @interface AppDelegate ()
 
@@ -26,11 +31,15 @@
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
+    
+    [GMSServices provideAPIKey:GOOGLE_API_KEY];
+    [GMSPlacesClient provideAPIKey:GOOGLE_API_KEY];
+    
     return YES;
 }
 
 - (void)updateRootNavigationController {
-    BOOL isLogedIn = NO;
+    BOOL isLogedIn = YES;
     UIViewController *activeViewController = nil;
         if (isLogedIn) {
             activeViewController = [[RidesViewController alloc] init];
