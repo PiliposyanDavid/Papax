@@ -13,5 +13,6 @@
 @interface NetworkingManager : NSObject
 
 + (instancetype)sharedInstance;
+- (void)requestToPath:(NSString *)path method:(NSString *)method params:(NSDictionary *)params completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler;
 
 @end
