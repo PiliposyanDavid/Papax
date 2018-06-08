@@ -10,6 +10,9 @@
 #import "CorneredTextField.h"
 #import "RegInfoObject.h"
 #import "GradientButton.h"
+#import "NetworkingManager.h"
+#import "UtilMethods.h"
+#import "RidesViewController.h"
 
 @interface RegistrationCarInfo () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
@@ -28,6 +31,10 @@
 @property (weak, nonatomic) IBOutlet CorneredTextField *modelField;
 @property (weak, nonatomic) IBOutlet CorneredTextField *seatsCountField;
 
+@property (weak, nonatomic) IBOutlet CorneredTextField *passangerNameField;
+@property (weak, nonatomic) IBOutlet GradientButton *passangerStartCarpoolButton;
+
+
 @property (weak, nonatomic) IBOutlet GradientButton *startCarpoolButton;
 
 @end
@@ -42,10 +49,10 @@
     self.colorField.delegate = self;
     self.modelField.delegate = self;
     self.seatsCountField.delegate = self;
+    self.passangerNameField.delegate = self;
     // Do any additional setup after loading the view.
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapReceived:)];
-    [tapGestureRecognizer setDelegate:self];
     [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
@@ -59,8 +66,13 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    NSData *imageData = UIImageJPEGRepresentation(chosenImage, 0.5);
+    NSString* imageStr = [[NSString alloc] initWithData:imageData encoding:NSASCIIStringEncoding];
+    if (imageStr) {
+        [RegInfoObject sharedInstance].regInfo[@"photo"] = imageStr;
+    }
+
     [self.imagePickerButton setImage:chosenImage forState:UIControlStateNormal];
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -89,24 +101,58 @@
     self.seatsCountField.delegate = self;
     
     if (textField == self.nameField) { //email
-            regInfo[@"name"] = textField.text;
+        [RegInfoObject sharedInstance].regInfo[@"name"] = textField.text;
     } else if(textField == self.numberField) {
-        regInfo[@"car"][@"number"] = textField.text;
+        [[RegInfoObject sharedInstance] fillCarWithName:@"number" value:textField.text];
     } else if (textField == self.colorField) {
-        regInfo[@"car"][@"color"] = textField.text;
+        [[RegInfoObject sharedInstance] fillCarWithName:@"color" value:textField.text];
     } else if (textField == self.modelField) {
-        regInfo[@"car"][@"model"] = self.modelField.text;
+        [[RegInfoObject sharedInstance] fillCarWithName:@"model" value:textField.text];
     } else if (textField == self.seatsCountField) {
-        regInfo[@"car"][@"seats_count"] = self.seatsCountField.text;
+        [[RegInfoObject sharedInstance] fillCarWithName:@"seats_count" value:textField.text];
+    } else if (textField == self.passangerNameField) {
+        [RegInfoObject sharedInstance].regInfo[@"name"] = textField.text;
     }
     
-    self.startCarpoolButton.enabled = (self.nameField.text.length && self.numberField.text.length &&  self.modelField.text.length && self.seatsCountField.text.length);
+    if (self.imDriverButton.selected) {
+        self.startCarpoolButton.enabled = (self.nameField.text.length && self.numberField.text.length &&  self.modelField.text.length && self.seatsCountField.text.length);
+    } else {
+        self.passangerStartCarpoolButton.enabled = self.passangerNameField.text.length;
+    }
 }
 
 -(void)tapReceived:(UITapGestureRecognizer *)tapGestureRecognizer {
     [self.view endEditing:YES];
 }
 
-
+- (IBAction)startCarpoolAction:(id)sender {
+        [[NetworkingManager sharedInstance] registerDriverWithBody:[RegInfoObject sharedInstance].regInfo onSuccess:^(id result) {
+            if ([result[@"status"] isEqualToString:@"error"]) {
+                [UtilMethods showMessageAlert:result[@"message"] andMessage:@"" fromViewController:self action:^{
+                    
+                }];
+            } else {
+                RidesViewController *activeViewController = [[RidesViewController alloc] init];
+                self.navigationController.viewControllers = @[activeViewController];
+                self.navigationController.navigationBar.hidden = NO;
+            }
+        } onFailure:^(NSError *error) {
+            
+        }];
+}
+- (IBAction)passangerCarpoolAction:(id)sender {
+    [[NetworkingManager sharedInstance] registerPassengerWithBody:[RegInfoObject sharedInstance].regInfo onSuccess:^(id result) {
+        if ([result[@"status"] isEqualToString:@"error"]) {
+            [UtilMethods showMessageAlert:result[@"message"] andMessage:@"" fromViewController:self action:^{
+                
+            }];
+        } else {
+            RidesViewController *activeViewController = [[RidesViewController alloc] init];
+            self.navigationController.viewControllers = @[activeViewController];
+        }
+    } onFailure:^(NSError *error) {
+        
+    }];
+}
 
 @end

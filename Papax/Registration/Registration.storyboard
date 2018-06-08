@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nvn-LV-lHJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nvn-LV-lHJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -434,6 +434,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkBlueVariant" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passangerCarpoolAction:" destination="jVT-rL-2wV" eventType="touchUpInside" id="QEu-Oy-REU"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add regular Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-Xc-gvf">
                                                 <rect key="frame" x="112" y="125" width="131" height="17"/>
@@ -563,6 +566,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="darkBlueVariant" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="startCarpoolAction:" destination="jVT-rL-2wV" eventType="touchUpInside" id="ZNS-nM-rf4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.61258561643835618" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -653,6 +659,8 @@
                         <outlet property="nameField" destination="inx-OX-i6A" id="EJA-2H-Cmw"/>
                         <outlet property="numberField" destination="7J7-Lx-wlL" id="sxL-Yk-lE1"/>
                         <outlet property="passangerContainer" destination="7bR-6J-ngS" id="G02-4h-8eM"/>
+                        <outlet property="passangerNameField" destination="cib-yO-3p8" id="9pL-Mq-SmX"/>
+                        <outlet property="passangerStartCarpoolButton" destination="EQY-T8-14P" id="bPq-qH-DlM"/>
                         <outlet property="scrollView" destination="UtQ-uz-sL9" id="1cc-3i-N9v"/>
                         <outlet property="seatsCountField" destination="CO5-wa-ad1" id="CUa-68-Fig"/>
                         <outlet property="startCarpoolButton" destination="lri-5K-kgf" id="nax-5m-rXw"/>

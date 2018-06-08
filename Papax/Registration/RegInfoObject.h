@@ -7,9 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-
-static NSMutableDictionary *regInfo;
+#import <CoreLocation/CoreLocation.h>
 
 @interface RegInfoObject : NSObject
+
++ (instancetype)sharedInstance;
+
+- (void)fillCarWithName:(NSString *)name value:(NSString *)value;
+
+- (void)fillLocation:(CLLocationCoordinate2D)location;
+
+@property (nonatomic) NSMutableDictionary *regInfo;
 
 @end

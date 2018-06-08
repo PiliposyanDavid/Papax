@@ -30,7 +30,6 @@
     self.nameField.delegate = self;
     self.phoneField.delegate = self;
     self.password.delegate = self;
-    regInfo = [[NSMutableDictionary alloc] init];
     // Do any additional setup after loading the view.
 }
 - (IBAction)signUpAction:(id)sender {
@@ -44,14 +43,15 @@
                 self.nameField.text = @"";
             }];
         } else {
-            regInfo[@"email"] = textField.text;
+            [RegInfoObject sharedInstance].regInfo[@"email"] = textField.text;
         }
     } else if(textField == self.phoneField) {
-        regInfo[@"phone"] = textField.text;
+        [RegInfoObject sharedInstance].regInfo[@"phone"] = textField.text;
     } else if (textField == self.password) {
-        regInfo[@"password"] = textField.text;
+        [RegInfoObject sharedInstance].regInfo[@"password"] = textField.text;
     }
     self.signupButton.enabled = (self.nameField.text.length && self.phoneField.text.length && self.password.text.length);
+    [[RegInfoObject sharedInstance] fillLocation:CLLocationCoordinate2DMake(894239408293, 4982349)];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent* )event {
