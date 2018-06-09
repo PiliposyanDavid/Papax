@@ -9,7 +9,6 @@
 #import "ShareTaxiViewController.h"
 #import "CorneredTextField.h"
 #import "RidesViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 #import "DirectionService.h"
 #import "NetworkingManager.h"
 #import "LoginManager.h"
@@ -70,9 +69,7 @@
     // Ask for My Location data after the map has already been added to the UI.
     self.mapContainerView.myLocationEnabled = YES;
     
-    if (self.mapViewBlock) {
-        self.mapViewBlock(self.mapContainerView);
-    }
+
 }
 
 - (GMSMarker *)markerObjectInPosition:(CLLocationCoordinate2D)coordinate {
@@ -201,12 +198,14 @@
 
 - (IBAction)createRide:(UIButton *)sender {
     NSDictionary *body = @{@"time" : @"09/08/2018",
-                           @"driver_id" : @"5b1b11a712d1ef84afbe5052",//[LoginManager sharedInstance].currentUser.userId,
+                           @"driver_id" : [LoginManager sharedInstance].currentUser.userId,
                            @"tab" : @"from_work",
                            @"route": self.route
                            };
     [[NetworkingManager sharedInstance] createRideWithBody:body onSuccess:^(id result) {
-        
+        if (self.mapViewBlock) {
+            self.mapViewBlock(self.mapContainerView);
+        }
     } onFailure:^(NSError *error) {
         
     }];

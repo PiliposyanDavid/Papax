@@ -159,12 +159,11 @@
                     
                 }];
             } else {
+                User *user = [[User alloc] initWithDictionary:result[@"data"]];
+                [[LoginManager sharedInstance] saveUser:user];
+                
                 PassangerRidesViewController *activeViewController = [[PassangerRidesViewController alloc] init];
                 self.navigationController.viewControllers = @[activeViewController];
-                
-                User *user = [[User alloc] init];
-                user.isDriver = NO;
-                [[LoginManager sharedInstance] saveUser:user];
             }
         } onFailure:^(NSError *error) {
             
