@@ -148,4 +148,21 @@
       }];
 }
 
+- (void)getBookWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure {
+    [self requestToPath:@"passenger/getbook"
+                 method:@"POST"
+                 params:body
+      completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+          if(!error) {
+              if(success) {
+                  success(responseObject);
+              }
+          } else {
+              if(failure) {
+                  failure(error);
+              }
+          }
+      }];
+}
+
 @end

@@ -203,9 +203,17 @@
                            @"route": self.route
                            };
     [[NetworkingManager sharedInstance] createRideWithBody:body onSuccess:^(id result) {
+
         if (self.mapViewBlock) {
             self.mapViewBlock(self.mapContainerView);
         }
+        [[NetworkingManager sharedInstance] getBookWithBody:@{@"driver_id" : [LoginManager sharedInstance].currentUser.userId}
+                                                  onSuccess:^(id result) {
+                                                      
+                                                  }
+                                                  onFailure:^(NSError *error) {
+                                                    
+                                                  }];
     } onFailure:^(NSError *error) {
         
     }];

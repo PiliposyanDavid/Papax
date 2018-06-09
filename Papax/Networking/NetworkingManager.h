@@ -23,5 +23,6 @@ typedef void (^FailureBlock)(NSError *error);
 - (void)registerDriverWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
 - (void)registerPassengerWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
 - (void)createRideWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
-    
+- (void)getBookWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
+
 @end
