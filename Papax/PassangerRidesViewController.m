@@ -8,6 +8,7 @@
 
 #import "PassangerRidesViewController.h"
 #import "LoginManager.h"
+#import "DriverRidesViewController.h"
 
 @interface PassangerRidesViewController ()
 
@@ -17,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIViewController *vc1 = [[UIViewController alloc] init];
+    DriverRidesViewController *vc1 = [[DriverRidesViewController alloc] init];
     vc1.view.backgroundColor = [UIColor orangeColor];
     UIViewController *vc2 = [[UIViewController alloc] init];
     vc2.view.backgroundColor = [UIColor greenColor];
@@ -41,7 +42,5 @@
     
     // Do any additional setup after loading the view.
 }
-
-
 
 @end

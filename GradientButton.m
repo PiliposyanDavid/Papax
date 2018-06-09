@@ -30,7 +30,9 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     if (self.enabled) {
-        if (self.darkBlueVariant) {
+        if (self.greenVariant) {
+            self.colors = @[(id)([UtilMethods colorFromHexString:@"#429321"]).CGColor, (id)([UtilMethods colorFromHexString:@"#B4EC51"]).CGColor];
+        } else if (self.darkBlueVariant) {
             self.colors = @[(id)([UtilMethods colorFromHexString:@"#303D99"]).CGColor, (id)([UtilMethods colorFromHexString:@"#3478B9"]).CGColor];
         } else {
             self.colors = @[(id)([UtilMethods colorFromHexString:@"#42BFEA"]).CGColor, (id)([UtilMethods colorFromHexString:@"#77E1F6"]).CGColor];
@@ -44,7 +46,7 @@
                         andEndPoint:CGPointMake(CGRectGetMaxX(self.bounds), CGRectGetMidY(self.bounds))];
         gradientView.colors = self.colors;
         gradientView.layer.masksToBounds = YES;
-        gradientView.layer.cornerRadius = 25;
+        gradientView.layer.cornerRadius = CGRectGetHeight(rect) / 2.f;
         [self addSubview:gradientView];
         
         self.titleLabel.layer.zPosition = 100;

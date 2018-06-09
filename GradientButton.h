@@ -13,4 +13,6 @@ IB_DESIGNABLE
 
 @property (nonatomic) IBInspectable BOOL darkBlueVariant;
 
+@property (nonatomic) IBInspectable BOOL greenVariant;
+
 @end
