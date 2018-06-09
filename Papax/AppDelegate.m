@@ -12,6 +12,7 @@
 #import <GooglePlaces/GooglePlaces.h>
 #import "LoginManager.h"
 #import "User.h"
+#import "PassangerRidesViewController.h"
 
 #define GOOGLE_API_KEY @"AIzaSyB6MZ5v0Kj6KdncBGeROfidNs-bWYub4_E"
 
@@ -45,7 +46,7 @@
     
     UIViewController *activeViewController = nil;
         if (isLogedIn) {
-            activeViewController = [[RidesViewController alloc] init];
+            activeViewController = [[PassangerRidesViewController alloc] init];
         } else {
             activeViewController = [UtilMethods VCFromStoryBoardWithName:@"Registration" viewControllerID:@"Registration"];
         }

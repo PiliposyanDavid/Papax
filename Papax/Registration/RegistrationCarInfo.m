@@ -150,7 +150,7 @@
                     
                 }];
             } else {
-                RidesViewController *activeViewController = [[RidesViewController alloc] init];
+                PassangerRidesViewController *activeViewController = [[PassangerRidesViewController alloc] init];
                 self.navigationController.viewControllers = @[activeViewController];
                 
                 User *user = [[User alloc] init];

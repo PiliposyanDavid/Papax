@@ -7,6 +7,7 @@
 //
 
 #import "PassangerRidesViewController.h"
+#import "LoginManager.h"
 
 @interface PassangerRidesViewController ()
 
@@ -16,22 +17,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIViewController *vc1 = [[UIViewController alloc] init];
+    vc1.view.backgroundColor = [UIColor orangeColor];
+    UIViewController *vc2 = [[UIViewController alloc] init];
+    vc2.view.backgroundColor = [UIColor greenColor];
+    UIViewController *vc3 = [[UIViewController alloc] init];
+    
+    vc1.title = @"To work";
+    vc2.title = @"From lunch";
+    vc3.title = @"From work";
+    
+    NSArray *controllers = @[vc1, vc2, vc3];
+    
+    // populate our tab bar controller with the above
+    [self setViewControllers:controllers animated:YES];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -10)];
+    
+    self.navigationController.navigationBar.hidden = NO;
+    self.title = @"Share a Taxi";
+    
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

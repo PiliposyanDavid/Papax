@@ -66,7 +66,7 @@
     [encoder encodeObject:@(self.homeLocation.longitude) forKey:@"homeLocation.longitude"];
     [encoder encodeObject:@(self.isActive) forKey:@"isActive"];
     [encoder encodeObject:self.car forKey:@"car"];
-    [encoder encodeObject:self.car forKey:@"type"];
+    [encoder encodeObject:self.type forKey:@"type"];
     
 }
 

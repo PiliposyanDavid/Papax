@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PassangerRidesViewController : UIViewController
+@interface PassangerRidesViewController : UITabBarController
 
 @end

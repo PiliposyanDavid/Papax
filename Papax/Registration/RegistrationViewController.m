@@ -9,7 +9,7 @@
 #import "RegistrationViewController.h"
 #import "CorneredTextField.h"
 #import "LoginManager.h"
-#import "RidesViewController.h"
+#import "PassangerRidesViewController.h"
 #import "UtilMethods.h"
 
 @interface RegistrationViewController ()
@@ -36,7 +36,7 @@
                 
             }];
         } else {
-            RidesViewController *activeViewController = [[RidesViewController alloc] init];
+            PassangerRidesViewController *activeViewController = [[PassangerRidesViewController alloc] init];
             self.navigationController.viewControllers = @[activeViewController];
         }
     } onFailure:^(NSError *error) {
