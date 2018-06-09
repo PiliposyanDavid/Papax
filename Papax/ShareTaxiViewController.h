@@ -10,4 +10,6 @@
 
 @interface ShareTaxiViewController : UIViewController
 
+- (instancetype)initWithBlock:(void (^)(GMSMapView *mapContainerView))mapViewBlock;
+
 @end
