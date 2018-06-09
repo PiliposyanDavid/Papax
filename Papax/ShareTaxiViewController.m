@@ -23,10 +23,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *seatsCountLabel;
 @property (nonatomic) BOOL firstLocationUpdate;
 @property (nonatomic) NSDictionary *route;
+@property (nonatomic, copy) void (^mapViewBlock)(GMSMapView *mapContainerView);
+
 
 @end
 
 @implementation ShareTaxiViewController
+
+- (instancetype)initWithBlock:(void (^)(GMSMapView *mapContainerView))mapViewBlock {
+    self = [super init];
+    if (self) {
+        self.mapViewBlock = mapViewBlock;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -59,6 +69,10 @@
     
     // Ask for My Location data after the map has already been added to the UI.
     self.mapContainerView.myLocationEnabled = YES;
+    
+    if (self.mapViewBlock) {
+        self.mapViewBlock(self.mapContainerView);
+    }
 }
 
 - (GMSMarker *)markerObjectInPosition:(CLLocationCoordinate2D)coordinate {

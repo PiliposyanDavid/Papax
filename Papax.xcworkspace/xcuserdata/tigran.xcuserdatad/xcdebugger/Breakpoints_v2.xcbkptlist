@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "195"
             endingLineNumber = "195"
-            landmarkName = "-createRide:"
+            landmarkName = "-decreaseButton:"
             landmarkType = "7">
             <Locations>
                <Location
@@ -143,7 +143,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
             endingLineNumber = "197"
-            landmarkName = "-createRide:"
+            landmarkName = "-decreaseButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
