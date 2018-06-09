@@ -22,4 +22,6 @@ typedef void (^FailureBlock)(NSError *error);
 - (void)loginWithPhoneNumber:(NSString *)phoneNumber password:(NSString *)password onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
 - (void)registerDriverWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
 - (void)registerPassengerWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
+- (void)createRideWithBody:(NSDictionary *)body onSuccess:(SuccessBlock)success onFailure:(FailureBlock)failure;
+    
 @end

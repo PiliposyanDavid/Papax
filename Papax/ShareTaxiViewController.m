@@ -11,6 +11,8 @@
 #import "RidesViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "DirectionService.h"
+#import "NetworkingManager.h"
+#import "LoginManager.h"
 
 @interface ShareTaxiViewController ()
 
@@ -20,10 +22,21 @@
 @property (weak, nonatomic) IBOutlet GMSMapView *mapContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *seatsCountLabel;
 @property (nonatomic) BOOL firstLocationUpdate;
+@property (nonatomic) NSDictionary *route;
+@property (nonatomic, copy) void (^mapViewBlock)(GMSMapView *mapContainerView);
+
 
 @end
 
 @implementation ShareTaxiViewController
+
+- (instancetype)initWithBlock:(void (^)(GMSMapView *mapContainerView))mapViewBlock {
+    self = [super init];
+    if (self) {
+        self.mapViewBlock = mapViewBlock;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,6 +69,10 @@
     
     // Ask for My Location data after the map has already been added to the UI.
     self.mapContainerView.myLocationEnabled = YES;
+    
+    if (self.mapViewBlock) {
+        self.mapViewBlock(self.mapContainerView);
+    }
 }
 
 - (GMSMarker *)markerObjectInPosition:(CLLocationCoordinate2D)coordinate {
@@ -109,8 +126,8 @@
     NSArray *arr = json[@"routes"];
     if (arr.count) {
         NSDictionary *routes = json[@"routes"][0];
-        NSDictionary *route = routes[@"overview_polyline"];
-        NSString *overviewRoute = route[@"points"];
+        self.route = routes[@"overview_polyline"];
+        NSString *overviewRoute = self.route[@"points"];
         GMSPath *path = [GMSPath pathFromEncodedPath:overviewRoute];
         GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
         polyline.strokeWidth = 10;
@@ -183,7 +200,16 @@
 }
 
 - (IBAction)createRide:(UIButton *)sender {
-    
+    NSDictionary *body = @{@"time" : @"09/08/2018",
+                           @"driver_id" : @"5b1b11a712d1ef84afbe5052",//[LoginManager sharedInstance].currentUser.userId,
+                           @"tab" : @"from_work",
+                           @"route": self.route
+                           };
+    [[NetworkingManager sharedInstance] createRideWithBody:body onSuccess:^(id result) {
+        
+    } onFailure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - KVO

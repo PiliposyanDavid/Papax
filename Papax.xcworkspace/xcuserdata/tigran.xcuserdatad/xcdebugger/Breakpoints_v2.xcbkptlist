@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/DirectionService.m"
-            timestampString = "550201469.20312"
+            timestampString = "550203051.68783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/DirectionService.m"
-            timestampString = "550201469.203198"
+            timestampString = "550203051.687914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/RidesViewControllers/RidesViewController.m"
-            timestampString = "550201469.203263"
+            timestampString = "550203051.687981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "304"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/RidesViewControllers/RidesViewController.m"
-            timestampString = "550201469.203342"
+            timestampString = "550203051.688062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "247"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/RidesViewControllers/RidesViewController.m"
-            timestampString = "550201469.203411"
+            timestampString = "550203051.688144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -90,13 +90,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/ShareTaxiViewController.m"
-            timestampString = "550201469.2034791"
+            timestampString = "550203051.688216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "-handleDestinationTap:"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "-decreaseButton:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[ShareTaxiViewController createRide:]_block_invoke"
+                  moduleName = "Papax"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tigran/Documents/Papax/Papax/ShareTaxiViewController.m"
+                  timestampString = "550203051.746632"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__38-[ShareTaxiViewController createRide:]_block_invoke_2"
+                  moduleName = "Papax"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tigran/Documents/Papax/Papax/ShareTaxiViewController.m"
+                  timestampString = "550203051.749796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,44 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Papax/ShareTaxiViewController.m"
-            timestampString = "550201469.203539"
+            timestampString = "550203051.688558"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-handleOriginTap:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Papax/RidesViewControllers/RidesViewController.m"
-            timestampString = "550201469.203596"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
-            landmarkName = "-gradientButtonPressed:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Papax/RidesViewControllers/RidesViewController.m"
-            timestampString = "550201469.203643"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "334"
-            endingLineNumber = "334"
-            landmarkName = "-gradientButtonPressed:"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-decreaseButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
