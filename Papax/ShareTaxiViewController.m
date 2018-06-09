@@ -9,7 +9,6 @@
 #import "ShareTaxiViewController.h"
 #import "CorneredTextField.h"
 #import "RidesViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 #import "DirectionService.h"
 #import "NetworkingManager.h"
 #import "LoginManager.h"
@@ -206,7 +205,13 @@
                            @"route": self.route
                            };
     [[NetworkingManager sharedInstance] createRideWithBody:body onSuccess:^(id result) {
-        
+        [[NetworkingManager sharedInstance] getBookWithBody:@{@"driver_id" : [LoginManager sharedInstance].currentUser.userId}
+                                                  onSuccess:^(id result) {
+                                                      
+                                                  }
+                                                  onFailure:^(NSError *error) {
+                                                    
+                                                  }];
     } onFailure:^(NSError *error) {
         
     }];

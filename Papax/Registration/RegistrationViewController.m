@@ -32,13 +32,6 @@
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
     
-    ShareTaxiViewController *vc = [ShareTaxiViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
-    
-    return;
-    
-    
-    
     [[LoginManager sharedInstance] loginWithPhoneNumber:self.emailTextField.text password:self.passwordTextField.text onSuccess:^(id result) {
         if ([result[@"status"] isEqualToString:@"error"]) {
             [UtilMethods showMessageAlert:result[@"message"] andMessage:@"" fromViewController:self action:^{
