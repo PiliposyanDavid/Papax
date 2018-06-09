@@ -28,15 +28,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [GMSServices provideAPIKey:GOOGLE_API_KEY];
+    [GMSPlacesClient provideAPIKey:GOOGLE_API_KEY];
+    
     [self updateRootNavigationController];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = self.rootNavigationController;
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
-    
-    [GMSServices provideAPIKey:GOOGLE_API_KEY];
-    [GMSPlacesClient provideAPIKey:GOOGLE_API_KEY];
     
     return YES;
 }

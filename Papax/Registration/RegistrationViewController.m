@@ -10,6 +10,8 @@
 #import "CorneredTextField.h"
 #import "LoginManager.h"
 #import "PassangerRidesViewController.h"
+#import "RidesViewController.h"
+#import "ShareTaxiViewController.h"
 #import "UtilMethods.h"
 
 @interface RegistrationViewController ()
@@ -30,6 +32,7 @@
 #pragma mark - Actions
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
+    
     [[LoginManager sharedInstance] loginWithPhoneNumber:self.emailTextField.text password:self.passwordTextField.text onSuccess:^(id result) {
         if ([result[@"status"] isEqualToString:@"error"]) {
             [UtilMethods showMessageAlert:result[@"message"] andMessage:@"" fromViewController:self action:^{

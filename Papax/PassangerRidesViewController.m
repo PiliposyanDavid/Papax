@@ -9,6 +9,7 @@
 #import "PassangerRidesViewController.h"
 #import "LoginManager.h"
 #import "DriverRidesViewController.h"
+#import "ShareTaxiViewController.h"
 
 @interface PassangerRidesViewController ()
 
@@ -18,11 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DriverRidesViewController *vc1 = [[DriverRidesViewController alloc] init];
-    vc1.view.backgroundColor = [UIColor orangeColor];
-    UIViewController *vc2 = [[UIViewController alloc] init];
-    vc2.view.backgroundColor = [UIColor greenColor];
-    UIViewController *vc3 = [[UIViewController alloc] init];
+    UIViewController *vc1 = nil;
+    UIViewController *vc2 = nil;
+    UIViewController *vc3 = nil;
+    
+    if ([LoginManager sharedInstance].currentUser.isDriver) {
+        //DriverRidesViewController *vc1 = [[DriverRidesViewController alloc] init];
+        vc1 = [ShareTaxiViewController new];
+        vc2 = [[DriverRidesViewController alloc] init];
+        vc3 = [ShareTaxiViewController new];
+    } else {
+        //DriverRidesViewController *vc1 = [[DriverRidesViewController alloc] init];
+        vc1 = [ShareTaxiViewController new];
+        vc2 = [[DriverRidesViewController alloc] init];
+        vc3 = [ShareTaxiViewController new];
+    }
     
     vc1.title = @"To work";
     vc2.title = @"From lunch";

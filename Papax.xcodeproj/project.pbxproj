@@ -35,6 +35,8 @@
 		984A999620CAF4BF001859B1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999520CAF4BF001859B1 /* User.m */; };
 		984A999920CAF8DF001859B1 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999820CAF8DF001859B1 /* LoginManager.m */; };
 		984A999C20CAFFA9001859B1 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999B20CAFFA9001859B1 /* Car.m */; };
+		984A99A020CB4CC6001859B1 /* ShareTaxiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 984A999E20CB4CC6001859B1 /* ShareTaxiViewController.m */; };
+		984A99A120CB4CC6001859B1 /* ShareTaxiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984A999F20CB4CC6001859B1 /* ShareTaxiViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,9 @@
 		984A999820CAF8DF001859B1 /* LoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		984A999A20CAFFA9001859B1 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		984A999B20CAFFA9001859B1 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		984A999D20CB4CC6001859B1 /* ShareTaxiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareTaxiViewController.h; sourceTree = "<group>"; };
+		984A999E20CB4CC6001859B1 /* ShareTaxiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareTaxiViewController.m; sourceTree = "<group>"; };
+		984A999F20CB4CC6001859B1 /* ShareTaxiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareTaxiViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +194,9 @@
 				15BB37DE20CA592E00469CFD /* Registration */,
 				984A999020CA5F0F001859B1 /* Networking */,
 				15BB37AC20C984B000469CFD /* AppDelegate.h */,
+				984A999D20CB4CC6001859B1 /* ShareTaxiViewController.h */,
+				984A999E20CB4CC6001859B1 /* ShareTaxiViewController.m */,
+				984A999F20CB4CC6001859B1 /* ShareTaxiViewController.xib */,
 				15BB37AD20C984B000469CFD /* AppDelegate.m */,
 				15BB37AF20C984B000469CFD /* ViewController.h */,
 				15BB37B020C984B000469CFD /* ViewController.m */,
@@ -393,6 +401,7 @@
 				15BB37B620C984B200469CFD /* Assets.xcassets in Resources */,
 				15BB37B420C984B000469CFD /* Main.storyboard in Resources */,
 				1511859120CB613600A4C4BD /* UserTableViewCell.xib in Resources */,
+				984A99A120CB4CC6001859B1 /* ShareTaxiViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +482,7 @@
 				1511859020CB613600A4C4BD /* UserTableViewCell.m in Sources */,
 				15BB37E120CA5AC800469CFD /* RegistrationViewController.m in Sources */,
 				984A998F20CA5F07001859B1 /* NetworkingManager.m in Sources */,
+				984A99A020CB4CC6001859B1 /* ShareTaxiViewController.m in Sources */,
 				15BB37BC20C984B200469CFD /* main.m in Sources */,
 				15BB37E720CA5F6000469CFD /* RidesViewController.m in Sources */,
 				15BB37AE20C984B000469CFD /* AppDelegate.m in Sources */,

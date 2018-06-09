@@ -230,8 +230,10 @@
 
 #pragma mark - API Call
 - (void)CallLocationGetAddress:(double)Lat Long:(double)Long {
+    CLLocationCoordinate2D position = [self.mapContainerView.projection coordinateForPoint:CGPointMake(self.view.center.x, self.view.center.y + 20)];
+
     CLGeocoder *ceo = [[CLGeocoder alloc] init];
-    CLLocation *loc = [[CLLocation alloc] initWithLatitude:Lat longitude:Long];
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:position.latitude longitude:position.longitude];
     
     [ceo reverseGeocodeLocation: loc completionHandler:^(NSArray *placemarks, NSError *error)
      {
@@ -323,11 +325,27 @@
 - (void)gradientButtonPressed:(UIButton *)sender {
     CLLocationCoordinate2D position = [self.mapContainerView.projection coordinateForPoint:CGPointMake(self.view.center.x, self.view.center.y + 20)];
     
-    GMSMarker *marker = [self markerObjectInPosition:position];
-    [self.waypoints addObject:marker];
-    [self drawMarkers];
-    
-    [self drawPath];
+    if (self.closeBlock) {
+        
+        CLGeocoder *ceo = [[CLGeocoder alloc] init];
+        CLLocation *loc = [[CLLocation alloc] initWithLatitude:position.latitude longitude:position.longitude];
+        
+        [ceo reverseGeocodeLocation: loc completionHandler:^(NSArray *placemarks, NSError *error) {
+            CLPlacemark *placemarkLocation = [placemarks objectAtIndex:0];
+            self.closeBlock(placemarkLocation.name, position);
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        
+    } else {
+        
+        
+        GMSMarker *marker = [self markerObjectInPosition:position];
+        [self.waypoints addObject:marker];
+        [self drawMarkers];
+        
+        [self drawPath];
+    }
 }
 
 - (void)drawPath {

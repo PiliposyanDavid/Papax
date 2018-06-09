@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nvn-LV-lHJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nvn-LV-lHJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -205,7 +205,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.6588235294" green="0.71372549019999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="av1-Mt-yut" customClass="CorneredTextField">
                                         <rect key="frame" x="20" y="132" width="315" height="50"/>
@@ -214,7 +214,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.6588235294" green="0.71372549019999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Giy-FH-D6b" customClass="CorneredTextField">
                                         <rect key="frame" x="20" y="198" width="315" height="50"/>
@@ -224,7 +224,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.6588235294" green="0.71372549019999998" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-Ts-dZN" customClass="GradientButton">
                                         <rect key="frame" x="20" y="272" width="315" height="50"/>
@@ -406,6 +406,9 @@
                                                         <integer key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="passangerAddRegularAddressPressed:" destination="jVT-rL-2wV" eventType="touchUpInside" id="yXq-Pv-BzN"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cib-yO-3p8" customClass="CorneredTextField">
                                                 <rect key="frame" x="20" y="20" width="315" height="50"/>
@@ -516,9 +519,15 @@
                                                         <integer key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="addRegularAddressPressed:" destination="jVT-rL-2wV" eventType="touchUpInside" id="2Z2-2y-gte"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add regular Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKD-xG-xhM">
                                                 <rect key="frame" x="111" y="125" width="131" height="17"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                </accessibility>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                 <color key="textColor" red="0.6588235294117647" green="0.71372549019607845" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -570,6 +579,16 @@
                                                     <action selector="startCarpoolAction:" destination="jVT-rL-2wV" eventType="touchUpInside" id="ZNS-nM-rf4"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_plus" translatesAutoresizingMaskIntoConstraints="NO" id="kwj-xi-wJk">
+                                                <rect key="frame" x="157" y="92" width="40" height="40"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="EJy-zW-S83"/>
+                                                    <constraint firstAttribute="width" constant="40" id="IYA-4h-zXw"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.61258561643835618" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -588,8 +607,10 @@
                                             <constraint firstAttribute="trailing" secondItem="CO5-wa-ad1" secondAttribute="trailing" constant="20" id="Pdt-i5-0UY"/>
                                             <constraint firstItem="PKD-xG-xhM" firstAttribute="top" secondItem="inx-OX-i6A" secondAttribute="bottom" constant="55" id="Qgk-y0-fl7"/>
                                             <constraint firstItem="lri-5K-kgf" firstAttribute="top" secondItem="CO5-wa-ad1" secondAttribute="bottom" constant="30" id="VFT-Ol-GdN"/>
+                                            <constraint firstItem="kwj-xi-wJk" firstAttribute="centerX" secondItem="R14-0r-GLA" secondAttribute="centerX" id="Vs5-cf-y8l"/>
                                             <constraint firstAttribute="trailing" secondItem="6in-Ge-Sfq" secondAttribute="trailing" constant="20" id="XFO-49-d6J"/>
                                             <constraint firstItem="iyc-nf-0No" firstAttribute="top" secondItem="6in-Ge-Sfq" secondAttribute="bottom" constant="30" id="XWX-Ag-4kY"/>
+                                            <constraint firstItem="kwj-xi-wJk" firstAttribute="top" secondItem="inx-OX-i6A" secondAttribute="bottom" constant="22" id="Xe8-jI-aWx"/>
                                             <constraint firstAttribute="trailing" secondItem="qM2-3C-l75" secondAttribute="trailing" constant="20" id="ZfR-Xc-frU"/>
                                             <constraint firstItem="qM2-3C-l75" firstAttribute="leading" secondItem="R14-0r-GLA" secondAttribute="leading" constant="20" id="ZyZ-rd-ZwR"/>
                                             <constraint firstAttribute="trailing" secondItem="9fY-3x-UWl" secondAttribute="trailing" constant="20" id="awp-xh-Qyk"/>
@@ -660,7 +681,12 @@
                         <outlet property="numberField" destination="7J7-Lx-wlL" id="sxL-Yk-lE1"/>
                         <outlet property="passangerContainer" destination="7bR-6J-ngS" id="G02-4h-8eM"/>
                         <outlet property="passangerNameField" destination="cib-yO-3p8" id="9pL-Mq-SmX"/>
+                        <outlet property="passangerRegularAddressButton" destination="XV8-LA-hYG" id="Yx4-uh-1Yu"/>
+                        <outlet property="passangerRegularAddressLabel" destination="XPn-Xc-gvf" id="6vV-g5-sbF"/>
                         <outlet property="passangerStartCarpoolButton" destination="EQY-T8-14P" id="bPq-qH-DlM"/>
+                        <outlet property="plusIcon" destination="kwj-xi-wJk" id="urf-fC-qlC"/>
+                        <outlet property="regularAddressButton" destination="6in-Ge-Sfq" id="7Xy-Ui-uac"/>
+                        <outlet property="regularAddressLabel" destination="PKD-xG-xhM" id="FSp-as-Fmi"/>
                         <outlet property="scrollView" destination="UtQ-uz-sL9" id="1cc-3i-N9v"/>
                         <outlet property="seatsCountField" destination="CO5-wa-ad1" id="CUa-68-Fig"/>
                         <outlet property="startCarpoolButton" destination="lri-5K-kgf" id="nax-5m-rXw"/>
@@ -675,6 +701,7 @@
         <image name="avatar" width="100" height="101"/>
         <image name="bgImage" width="360" height="640"/>
         <image name="cam" width="38" height="17"/>
+        <image name="ic_plus" width="250" height="250"/>
         <image name="im_driver" width="86" height="34"/>
         <image name="im_driver_selected" width="135" height="50"/>
         <image name="im_passanger" width="125" height="34"/>
