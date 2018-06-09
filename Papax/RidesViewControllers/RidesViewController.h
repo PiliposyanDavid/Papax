@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface RidesViewController : UIViewController
+
+@property (nonatomic, copy) void (^closeBlock)(NSString *name, CLLocationCoordinate2D location);
 
 @end

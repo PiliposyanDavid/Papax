@@ -37,6 +37,13 @@
 
 @property (weak, nonatomic) IBOutlet GradientButton *startCarpoolButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *regularAddressButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *plusIcon;
+@property (weak, nonatomic) IBOutlet UILabel *regularAddressLabel;
+@property (weak, nonatomic) IBOutlet UIButton *passangerRegularAddressButton;
+@property (weak, nonatomic) IBOutlet UILabel *passangerRegularAddressLabel;
+
 @end
 
 @implementation RegistrationCarInfo
@@ -125,6 +132,9 @@
     [self.view endEditing:YES];
 }
 
+
+#pragma mark - Actions
+
 - (IBAction)startCarpoolAction:(id)sender {
         [[NetworkingManager sharedInstance] registerDriverWithBody:[RegInfoObject sharedInstance].regInfo onSuccess:^(id result) {
             if ([result[@"status"] isEqualToString:@"error"]) {
@@ -153,6 +163,32 @@
     } onFailure:^(NSError *error) {
         
     }];
+}
+
+- (IBAction)addRegularAddressPressed:(UIButton *)sender {
+    RidesViewController *vc = [RidesViewController new];
+    vc.closeBlock = ^(NSString *name, CLLocationCoordinate2D location) {
+        
+        [[RegInfoObject sharedInstance] fillLocation:location];
+
+        [self.regularAddressButton setTitle:name forState:UIControlStateNormal];
+        self.plusIcon.hidden = YES;
+        self.regularAddressLabel.hidden = YES;
+    };
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)passangerAddRegularAddressPressed:(UIButton *)sender {
+    RidesViewController *vc = [RidesViewController new];
+    vc.closeBlock = ^(NSString *name, CLLocationCoordinate2D location) {
+        
+        [[RegInfoObject sharedInstance] fillLocation:location];
+        
+        [self.passangerRegularAddressButton setTitle:name forState:UIControlStateNormal];
+//        self.plusIcon.hidden = YES;
+        self.passangerRegularAddressLabel.hidden = YES;
+    };
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "CorneredTextField.h"
 #import "LoginManager.h"
 #import "RidesViewController.h"
+#import "ShareTaxiViewController.h"
 
 @interface RegistrationViewController ()
 
@@ -29,6 +30,14 @@
 #pragma mark - Actions
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
+    
+    ShareTaxiViewController *vc = [ShareTaxiViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    return;
+    
+    
+    
     [[LoginManager sharedInstance] loginWithPhoneNumber:self.emailTextField.text password:self.passwordTextField.text onSuccess:^(id result) {
         UIViewController *vc = [RidesViewController new];
         [self.navigationController pushViewController:vc animated:YES];
