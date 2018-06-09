@@ -41,6 +41,7 @@
         //DriverRidesViewController *vc1 = [[DriverRidesViewController alloc] init];
         if (self.mapContainerView) {
             vc1 = [[DriverRidesViewController alloc] init];
+            ((DriverRidesViewController *)vc1).mapContainerView = self.mapContainerView;
         } else {
             vc1 = [[ShareTaxiViewController alloc] initWithBlock:^(GMSMapView *mapContainerView) {
                 self.mapContainerView = mapContainerView;

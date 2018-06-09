@@ -26,7 +26,8 @@
     [self.view addSubview:tableView];
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 150)];
-    headerView.backgroundColor = [UIColor orangeColor];
+    self.mapContainerView.frame = headerView.bounds;
+    [headerView addSubview:self.mapContainerView];
     
     tableView.tableHeaderView = headerView;
     // Do any additional setup after loading the view.
